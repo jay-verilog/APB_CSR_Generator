@@ -8,7 +8,7 @@
     <register_width reg_width  = ""> </register_width>
    
 <!--  APB INTERFACE INPUT/OUTPUT PORT DECLARTION -->   
-<!--  If you don't want i/o, You can remove it-->
+<!--  If you don't want I/O, You can remove it-->
     <apb_extra_input>
         <Field input = ""  width = ""/>
         <Field input = ""  width = ""/>
@@ -24,7 +24,7 @@
     </apb_extra_output>
 
 <!--  Top Block INPUT/OUTPUT PORT DECLARTION -->
-<!--  If you don't want i/o, You can remove it-->
+<!--  If you don't want I/O, You can remove it-->
     <top_block_extra_input>
         <Field input = ""  width = ""/>
         <Field input = ""  width = ""/>
