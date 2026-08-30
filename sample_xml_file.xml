@@ -68,9 +68,7 @@
         name    = "SPI_CONTROL_REGISTER1"
         address = "'h0"
         reset   = "32'h0"
-        wr      = "wr"
-    >
-        
+        wr      = "wr">
         <Field name="SPIE"   bit_addr = "'h7"/>
         <Field name="SPE"    bit_addr = "'h6"/>
         <Field name="SPTIE"  bit_addr = "'h5"/>
@@ -80,6 +78,7 @@
         <Field name="SSOE"   bit_addr = "'h1"/>
         <Field name="LSBFE"  bit_addr = "'h0"/>
     </Register_SPI_CONTROL_REGISTER>
+
 
     <Register_SPI_CONTROL_REGISTER2
         name    = "SPI_CONTROL_REGISTER2"
@@ -91,6 +90,7 @@
         <Field name="SPISWAI"  bit_addr = "'h1"/>
         <Field name="SPC0"     bit_addr = "'h0"/>
     </Register_SPI_CONTROL_REGISTER2>
+
 
     <Register_SPI_BAUD_RATE_REGISTER
         name    = "SPI_BAUD_RATE_REGISTER"
@@ -105,24 +105,23 @@
         <Field name="SPR0"  bit_addr = "'h0"/>
     </Register_SPI_BAUD_RATE_REGISTER>
 
+
     <Register_SPI_STATUS_REGISTER
         name    = "SPI_STATUS_REGISTER"
         address = "'h3"
         reset   = "32'h0"
         wr      = "r">
-
         <Field name="SPIF"  bit_addr = "'h7"/>
         <Field name="SPTEF" bit_addr = "'h5"/>
         <Field name="MODF"  bit_addr = "'h4"/>
-
     </Register_SPI_STATUS_REGISTER>
+
 
     <Register_SPI_DATA_REGISTER
         name    = "SPI_DATA_REGISTER"
         address = "'h4"
         reset   = "32'h0"
         wr      = "wr">
-
         <Field name = "DATA31" bit_addr = "'h1F"/>
         <Field name = "DATA30" bit_addr = "'h1E"/>
         <Field name = "DATA29" bit_addr = "'h1D"/>
@@ -155,7 +154,6 @@
         <Field name = "DATA02" bit_addr = "'h2"/>
         <Field name = "DATA01" bit_addr = "'h1"/>
         <Field name = "DATA00" bit_addr = "'h0"/>
-
     </Register_SPI_DATA_REGISTER> 
 
 </Register_Map>
