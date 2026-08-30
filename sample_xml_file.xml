@@ -6,44 +6,158 @@
 <register_width reg_width  = "32"> </register_width>
 
 <!-- Register map: duplicate this block for every register you need.
-     "wr" = "wr" (read/write), "r" (read only).-->
+    "wr" = "wr" (read/write), "r" (read only).
+    Don't define reversed bit/bits
+    -->
+
     <Register_NAME
-        name    = "NAME1"
-        address = "'b0"
-        reset   = "32'b0"
-        wr      = "wr">
-        <Field name = "FIELD31" bits="5'b11111"/>
-        <Field name = "FIELD30" bits="5'b11110"/>
-        <Field name = "FIELD29" bits="5'b11101"/>
-        <Field name = "FIELD28" bits="5'b11100"/>
-        <Field name = "FIELD27" bits="5'b11011"/>
-        <Field name = "FIELD26" bits="5'b11010"/>
-        <Field name = "FIELD25" bits="5'b11001"/>
-        <Field name = "FIELD24" bits="5'b11000"/>
-        <Field name = "FIELD23" bits="5'b10111"/>
-        <Field name = "FIELD22" bits="5'b10110"/>
-        <Field name = "FIELD21" bits="5'b10101"/>
-        <Field name = "FIELD20" bits="5'b10100"/>
-        <Field name = "FIELD19" bits="5'b10011"/>
-        <Field name = "FIELD18" bits="5'b10010"/>
-        <Field name = "FIELD17" bits="5'b10001"/>
-        <Field name = "FIELD16" bits="5'b10000"/>
-        <Field name = "FIELD15" bits="5'b01111"/>
-        <Field name = "FIELD14" bits="5'b01110"/>
-        <Field name = "FIELD13" bits="5'b01101"/>
-        <Field name = "FIELD12" bits="5'b01100"/>
-        <Field name = "FIELD11" bits="5'b01011"/>
-        <Field name = "FIELD10" bits="5'b01010"/>
-        <Field name = "FIELD9" bits="5'b00101"/>
-        <Field name = "FIELD8" bits="5'b00100"/>
-        <Field name = "FIELD7" bits="5'b00111"/>
-        <Field name = "FIELD6" bits="5'b00110"/>
-        <Field name = "FIELD5" bits="5'b00101"/>
-        <Field name = "FIELD4" bits="5'b00100"/>
-        <Field name = "FIELD3" bits="5'b00011"/>
-        <Field name = "FIELD2" bits="5'b00010"/>
-        <Field name = "FIELD1" bits="5'b00001"/>
-        <Field name = "FIELD0" bits="5'b00000"/>
+        name        = "NAME"
+        address     = "" 
+        reset       = "32'h0"
+        wr          = "wr"
+        >
+
+        <Field name = "FIELD31" bit_addr = "'h1F"/>
+        <Field name = "FIELD30" bit_addr = "'h1E"/>
+        <Field name = "FIELD29" bit_addr = "'h1D"/>
+        <Field name = "FIELD28" bit_addr = "'h1C"/>
+        <Field name = "FIELD27" bit_addr = "'h1B"/>
+        <Field name = "FIELD26" bit_addr = "'h1A"/>
+        <Field name = "FIELD25" bit_addr = "'h19"/>
+        <Field name = "FIELD24" bit_addr = "'h18"/>
+        <Field name = "FIELD23" bit_addr = "'h17"/>
+        <Field name = "FIELD22" bit_addr = "'h16"/>
+        <Field name = "FIELD21" bit_addr = "'h15"/>
+        <Field name = "FIELD20" bit_addr = "'h14"/>
+        <Field name = "FIELD19" bit_addr = "'h13"/>
+        <Field name = "FIELD18" bit_addr = "'h12"/>
+        <Field name = "FIELD17" bit_addr = "'h11"/>
+        <Field name = "FIELD16" bit_addr = "'h10"/>
+        <Field name = "FIELD15" bit_addr = "'hF"/>
+        <Field name = "FIELD14" bit_addr = "'hE"/>
+        <Field name = "FIELD13" bit_addr = "'hD"/>
+        <Field name = "FIELD12" bit_addr = "'hC"/>
+        <Field name = "FIELD11" bit_addr = "'hB"/>
+        <Field name = "FIELD10" bit_addr = "'hA"/>
+        <Field name = "FIELD09" bit_addr = "'h9"/>
+        <Field name = "FIELD08" bit_addr = "'h8"/>
+        <Field name = "FIELD07" bit_addr = "'h7"/>
+        <Field name = "FIELD06" bit_addr = "'h6"/>
+        <Field name = "FIELD05" bit_addr = "'h5"/>
+        <Field name = "FIELD04" bit_addr = "'h4"/>
+        <Field name = "FIELD03" bit_addr = "'h3"/>
+        <Field name = "FIELD02" bit_addr = "'h2"/>
+        <Field name = "FIELD01" bit_addr = "'h1"/>
+        <Field name = "FIELD00" bit_addr = "'h0"/>
     </Register_NAME>
 
 </Register_Map>
+
+
+
+<!-- EXAMPLE
+
+<Register_Map>
+    <block_name     block_name = "spi"> </data_width>  
+    <data_width     data_width = "32">  </data_width>
+    <address_width  addr_width = "4">   </address_width>
+    <register_width reg_width  = "32">  </register_width>
+
+  
+    <Register_SPI_CONTROL_REGISTER
+        name    = "SPI_CONTROL_REGISTER1"
+        address = "'h0"
+        reset   = "32'h0"
+        wr      = "wr"
+    >
+        
+        <Field name="SPIE"   bit_addr = "'h7"/>
+        <Field name="SPE"    bit_addr = "'h6"/>
+        <Field name="SPTIE"  bit_addr = "'h5"/>
+        <Field name="MSTR"   bit_addr = "'h4"/>
+        <Field name="CPOL"   bit_addr = "'h3"/>
+        <Field name="CPHA"   bit_addr = "'h2"/>
+        <Field name="SSOE"   bit_addr = "'h1"/>
+        <Field name="LSBFE"  bit_addr = "'h0"/>
+    </Register_SPI_CONTROL_REGISTER>
+
+    <Register_SPI_CONTROL_REGISTER2
+        name    = "SPI_CONTROL_REGISTER2"
+        address = "'h1"
+        reset   = "32'h4"
+        wr      = "wr">
+        <Field name="MODFEN"   bit_addr = "'h3"/>
+        <Field name="BIDIROE"  bit_addr = "'h2"/>
+        <Field name="SPISWAI"  bit_addr = "'h1"/>
+        <Field name="SPC0"     bit_addr = "'h0"/>
+    </Register_SPI_CONTROL_REGISTER2>
+
+    <Register_SPI_BAUD_RATE_REGISTER
+        name    = "SPI_BAUD_RATE_REGISTER"
+        address = "'h2"
+        reset   = "32'h0"
+        wr      = "wr">
+        <Field name="SPPR2" bit_addr = "'h6"/>
+        <Field name="SPPR1" bit_addr = "'h5"/>
+        <Field name="SPPR0" bit_addr = "'h4"/>
+        <Field name="SPR2"  bit_addr = "'h2"/>
+        <Field name="SPR1"  bit_addr = "'h1"/>
+        <Field name="SPR0"  bit_addr = "'h0"/>
+    </Register_SPI_BAUD_RATE_REGISTER>
+
+    <Register_SPI_STATUS_REGISTER
+        name    = "SPI_STATUS_REGISTER"
+        address = "'h3"
+        reset   = "32'h0"
+        wr      = "r">
+
+        <Field name="SPIF"  bit_addr = "'h7"/>
+        <Field name="SPTEF" bit_addr = "'h5"/>
+        <Field name="MODF"  bit_addr = "'h4"/>
+
+    </Register_SPI_STATUS_REGISTER>
+
+    <Register_SPI_DATA_REGISTER
+        name    = "SPI_DATA_REGISTER"
+        address = "'h4"
+        reset   = "32'h0"
+        wr      = "wr">
+
+        <Field name = "DATA31" bit_addr = "'h1F"/>
+        <Field name = "DATA30" bit_addr = "'h1E"/>
+        <Field name = "DATA29" bit_addr = "'h1D"/>
+        <Field name = "DATA28" bit_addr = "'h1C"/>
+        <Field name = "DATA27" bit_addr = "'h1B"/>
+        <Field name = "DATA26" bit_addr = "'h1A"/>
+        <Field name = "DATA25" bit_addr = "'h19"/>
+        <Field name = "DATA24" bit_addr = "'h18"/>
+        <Field name = "DATA23" bit_addr = "'h17"/>
+        <Field name = "DATA22" bit_addr = "'h16"/>
+        <Field name = "DATA21" bit_addr = "'h15"/>
+        <Field name = "DATA20" bit_addr = "'h14"/>
+        <Field name = "DATA19" bit_addr = "'h13"/>
+        <Field name = "DATA18" bit_addr = "'h12"/>
+        <Field name = "DATA17" bit_addr = "'h11"/>
+        <Field name = "DATA16" bit_addr = "'h10"/>
+        <Field name = "DATA15" bit_addr = "'hF"/>
+        <Field name = "DATA14" bit_addr = "'hE"/>
+        <Field name = "DATA13" bit_addr = "'hD"/>
+        <Field name = "DATA12" bit_addr = "'hC"/>
+        <Field name = "DATA11" bit_addr = "'hB"/>
+        <Field name = "DATA10" bit_addr = "'hA"/>
+        <Field name = "DATA09" bit_addr = "'h9"/>
+        <Field name = "DATA08" bit_addr = "'h8"/>
+        <Field name = "DATA07" bit_addr = "'h7"/>
+        <Field name = "DATA06" bit_addr = "'h6"/>
+        <Field name = "DATA05" bit_addr = "'h5"/>
+        <Field name = "DATA04" bit_addr = "'h4"/>
+        <Field name = "DATA03" bit_addr = "'h3"/>
+        <Field name = "DATA02" bit_addr = "'h2"/>
+        <Field name = "DATA01" bit_addr = "'h1"/>
+        <Field name = "DATA00" bit_addr = "'h0"/>
+
+    </Register_SPI_DATA_REGISTER> 
+
+</Register_Map>
+
+-->
