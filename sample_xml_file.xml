@@ -1,184 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="style.css"?>
 
 <Register_Map>
-    <block_name     block_name = ""> </data_width>  <!-- block should in lower_case -->
-    <data_width     data_width = ""> </data_width>
-    <address_width  addr_width = ""> </address_width>
-    <register_width reg_width  = ""> </register_width>
-   
-<!--  APB INTERFACE INPUT/OUTPUT PORT DECLARTION -->   
-<!--  If you don't want I/O, You can remove it-->
-    <apb_extra_input>
-        <Field input = ""  width = ""/>
-        <Field input = ""  width = ""/>
-        <Field input = ""  width = ""/>
-        <Field input = ""  width = ""/>
-    </apb_extra_input>
+<block_name     block_name = ""> </block_name>  <!-- block name should be lower_case -->
+<data_width     data_width = "32"> </data_width>
+<address_width  addr_width = ""> </address_width>
+<register_width reg_width  = "32"> </register_width>
 
-    <apb_extra_output>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-    </apb_extra_output>
-
-<!--  Top Block INPUT/OUTPUT PORT DECLARTION -->
-<!--  If you don't want I/O, You can remove it-->
-    <top_block_extra_input>
-        <Field input = ""  width = ""/>
-        <Field input = ""  width = ""/>
-        <Field input = ""  width = ""/>
-        <Field input = ""  width = ""/>
-    </top_block_extra_input>
-
-    <top_block_extra_output>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-    </top_block_extra_output>
-
-    <top_block_extra_inout>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-        <Field output = "" width = ""/>
-    </top_block_extra_output>
-
-
-<!-- Register Map -->
+<!-- Register map: duplicate this block for every register you need.
+     "wr" = "wr" (read/write), "r" (read only).-->
     <Register_NAME
-        name    = "NAME1"   
-        address = "'h"
-        reset   = "'h"
-        wr      = "">   <!-- "wr" = wirte and read. "r" = read only. "w" = write only  -->
-        <Field name = ""   bits="3'b111"/>
-        <Field name = ""   bits="3'b110"/>
-        <Field name = ""   bits="3'b101"/>
-        <Field name = ""   bits="3'b100"/>
-        <Field name = ""   bits="3'b011"/>
-        <Field name = ""   bits="3'b010"/>
-        <Field name = ""   bits="3'b001"/>
-        <Field name = ""   bits="3'b000"/>
+        name    = "NAME1"
+        address = "'b0"
+        reset   = "32'b0"
+        wr      = "wr">
+        <Field name = "FIELD31" bits="5'b11111"/>
+        <Field name = "FIELD30" bits="5'b11110"/>
+        <Field name = "FIELD29" bits="5'b11101"/>
+        <Field name = "FIELD28" bits="5'b11100"/>
+        <Field name = "FIELD27" bits="5'b11011"/>
+        <Field name = "FIELD26" bits="5'b11010"/>
+        <Field name = "FIELD25" bits="5'b11001"/>
+        <Field name = "FIELD24" bits="5'b11000"/>
+        <Field name = "FIELD23" bits="5'b10111"/>
+        <Field name = "FIELD22" bits="5'b10110"/>
+        <Field name = "FIELD21" bits="5'b10101"/>
+        <Field name = "FIELD20" bits="5'b10100"/>
+        <Field name = "FIELD19" bits="5'b10011"/>
+        <Field name = "FIELD18" bits="5'b10010"/>
+        <Field name = "FIELD17" bits="5'b10001"/>
+        <Field name = "FIELD16" bits="5'b10000"/>
+        <Field name = "FIELD15" bits="5'b01111"/>
+        <Field name = "FIELD14" bits="5'b01110"/>
+        <Field name = "FIELD13" bits="5'b01101"/>
+        <Field name = "FIELD12" bits="5'b01100"/>
+        <Field name = "FIELD11" bits="5'b01011"/>
+        <Field name = "FIELD10" bits="5'b01010"/>
+        <Field name = "FIELD9" bits="5'b00101"/>
+        <Field name = "FIELD8" bits="5'b00100"/>
+        <Field name = "FIELD7" bits="5'b00111"/>
+        <Field name = "FIELD6" bits="5'b00110"/>
+        <Field name = "FIELD5" bits="5'b00101"/>
+        <Field name = "FIELD4" bits="5'b00100"/>
+        <Field name = "FIELD3" bits="5'b00011"/>
+        <Field name = "FIELD2" bits="5'b00010"/>
+        <Field name = "FIELD1" bits="5'b00001"/>
+        <Field name = "FIELD0" bits="5'b00000"/>
     </Register_NAME>
 
-
-
 </Register_Map>
-
-
-<!-- EXAMPLE
-
-<Register_Map>
-    <block_name     block_name = "spi"> </data_width>  
-    <data_width     data_width = "8">   </data_width>
-    <address_width  addr_width = "3">   </address_width>
-    <register_width reg_width  = "8">   </register_width>
-
-    <apb_extra_input>
-        <Field input = "ss_i"           width = "1"/>
-        <Field input = "miso_data_i"    width = "1"/>
-        <Field input = "receive_data_"  width = "1"/>
-        <Field input = "tip_i"          width = "1"/>
-    </apb_extra_input>
-
-    <apb_extra_output>
-        <Field output = "mstr_o"                  width = "1"/>
-        <Field output = "cpol_o"                  width = "1"/>
-        <Field output = "cpha_o"                  width = "1"/>
-        <Field output = "lsbfe_o"                 width = "1"/>
-        <Field output = "spiswai_o"               width = "1"/>
-        <Field output = "sppr_o"                  width = "3"/>
-        <Field output = "spr_o"                   width = "3"/>
-        <Field output = "spi_interrupt_request_o" width = "1"/>
-        <Field output = "send_data_o"             width = "1"/>
-        <Field output = "mosi_data_o"             width = "1"/>
-        <Field output = "spi_mode_o"              width = "2"/>
-        <Field output = "spe_o"                   width = "1"/>
-    </apb_extra_output>
-
-
-    <top_block_extra_input>
-        <Field input = "ss_in"  width = "1"/>
-    </top_block_extra_input>
-
-    <top_block_extra_output>
-        <Field output = "spi_interrupt_request" width = "1"/>
-    </top_block_extra_output>
-
-    <top_block_extra_inout>
-        <Field output = "sclk" width = "1"/>
-        <Field output = "ss"   width = "1"/>
-        <Field output = "mosi" width = "1"/>
-        <Field output = "miso" width = "1"/>
-    </top_block_extra_output>
-
-  
-    <Register_SPI_CONTROL_REGISTER
-        name    = "SPI_CONTROL_REGISTER1"
-        address = "8'b0000_0000"
-        reset   = "8'b0000_0100"
-        wr      = "wr">
-        <Field name="SPIE"   bits="3'b111"/>
-        <Field name="SPE"    bits="3'b110"/>
-        <Field name="SPTIE"  bits="3'b101"/>
-        <Field name="MSTR"   bits="3'b100"/>
-        <Field name="CPOL"   bits="3'b011"/>
-        <Field name="CPHA"   bits="3'b010"/>
-        <Field name="SSOE"   bits="3'b001"/>
-        <Field name="LSBFE"  bits="3'b000"/>
-    </Register_SPI_CONTROL_REGISTER>
-
-    <Register_SPI_CONTROL_REGISTER2
-        name    = "SPI_CONTROL_REGISTER2"
-        address = "8'b0000_0001"
-        reset   = "8'b0000_0000"
-        wr      = "wr">
-        <Field name="MODFEN"   bits="3'b100"/>
-        <Field name="BIDIROE"  bits="3'b011"/>
-        <Field name="SPISWAI"  bits="3'b001"/>
-        <Field name="SPC0"     bits="3'b000"/>
-    </Register_SPI_CONTROL_REGISTER2>
-
-    <Register_SPI_BAUD_RATE_REGISTER
-        name    = "SPI_BAUD_RATE_REGISTER"
-        address = "8'b0000_0010"
-        reset   = "8'b0000_0000"
-        wr      = "wr">
-        <Field name="SPPR2" bits="3'b110"/>
-        <Field name="SPPR1" bits="3'b101"/>
-        <Field name="SPPR0" bits="3'b100"/>
-        <Field name="SPR2"  bits="3'b010"/>
-        <Field name="SPR1"  bits="3'b001"/>
-        <Field name="SPR0"  bits="3'b000"/>
-    </Register_SPI_BAUD_RATE_REGISTER>
-
-    <Register_SPI_STATUS_REGISTER
-        name    = "SPI_STATUS_REGISTER"
-        address = "8'b0000_0011"
-        reset   = "8'b0010_0000"
-        wr      = "r">
-        <Field name="SPIF"  bits="3'b111"/>
-        <Field name="SPTEF" bits="3'b101"/>
-        <Field name="MODF"  bits="3'b100"/>
-    </Register_SPI_STATUS_REGISTER>
-
-    <Register_SPI_DATA_REGISTER
-        name    = "SPI_DATA_REGISTER"
-        address = "8'b0000_0100"
-        reset   = "8'b0000_0000"
-        wr      = "wr">
-        <Field name="BIT7" bits="3'b111"/>
-        <Field name="BIT6" bits="3'b110"/>
-        <Field name="BIT5" bits="3'b101"/>
-        <Field name="BIT4" bits="3'b100"/>
-        <Field name="BIT3" bits="3'b011"/>
-        <Field name="BIT2" bits="3'b010"/>
-        <Field name="BIT1" bits="3'b001"/>
-        <Field name="BIT0" bits="3'b000"/>
-    </Register_SPI_DATA_REGISTER> 
-</Register_Map>
-
--->
-
