@@ -1,0 +1,96 @@
+<Register_Map>
+    <block_name     block_name = "spi"> </block_name>  
+    <data_width     data_width = "32">  </data_width>
+    <address_width  addr_width = "4">   </address_width>
+    <register_width reg_width  = "32">  </register_width>
+
+  
+    <Register_SPI_CONTROL_REGISTER
+        name    = "CONTROL_REGISTER1"
+        address = "'h0"
+        reset   = "32'h0"
+        wr      = "wr">
+        <Field bit_name="SPIE"   bit_position = "'h7"/>
+        <Field bit_name="SPE"    bit_position = "'h6"/>
+        <Field bit_name="SPTIE"  bit_position = "'h5"/>
+        <Field bit_name="MSTR"   bit_position = "'h4"/>
+        <Field bit_name="CPOL"   bit_position = "'h3"/>
+        <Field bit_name="CPHA"   bit_position = "'h2"/>
+        <Field bit_name="SSOE"   bit_position = "'h1"/>
+        <Field bit_name="LSBFE"  bit_position = "'h0"/>
+    </Register_SPI_CONTROL_REGISTER>
+
+    <Register_SPI_CONTROL_REGISTER2
+        name    = "CONTROL_REGISTER2"
+        address = "'h1"
+        reset   = "32'h4"
+        wr      = "wr">
+        <Field bit_name="MODFEN"   bit_position = "'h3"/>
+        <Field bit_name="BIDIROE"  bit_position = "'h2"/>
+        <Field bit_name="SPISWAI"  bit_position = "'h1"/>
+        <Field bit_name="SPC0"     bit_position = "'h0"/>
+    </Register_SPI_CONTROL_REGISTER2>
+
+    <Register_SPI_BAUD_RATE_REGISTER
+        name    = "BAUD_RATE_REGISTER"
+        address = "'h2"
+        reset   = "32'h0"
+        wr      = "wr">
+        <Field bit_name="SPPR2" bit_position = "'h6"/>
+        <Field bit_name="SPPR1" bit_position = "'h5"/>
+        <Field bit_name="SPPR0" bit_position = "'h4"/>
+        <Field bit_name="SPR2"  bit_position = "'h2"/>
+        <Field bit_name="SPR1"  bit_position = "'h1"/>
+        <Field bit_name="SPR0"  bit_position = "'h0"/>
+    </Register_SPI_BAUD_RATE_REGISTER>
+
+    <Register_SPI_STATUS_REGISTER
+        name    = "STATUS_REGISTER"
+        address = "'h3"
+        reset   = "32'h0"
+        wr      = "r">
+        <Field bit_name="SPIF"  bit_position = "'h7"/>
+        <Field bit_name="SPTEF" bit_position = "'h5"/>
+        <Field bit_name="MODF"  bit_position = "'h4"/>
+    </Register_SPI_STATUS_REGISTER>
+
+    <Register_SPI_DATA_REGISTER
+        name    = "DATA_REGISTER"
+        address = "'h4"
+        reset   = "32'h0"
+        wr      = "wr">
+        <Field bit_name = "DATA31" bit_position = "'h1F"/>
+        <Field bit_name = "DATA30" bit_position = "'h1E"/>
+        <Field bit_name = "DATA29" bit_position = "'h1D"/>
+        <Field bit_name = "DATA28" bit_position = "'h1C"/>
+        <Field bit_name = "DATA27" bit_position = "'h1B"/>
+        <Field bit_name = "DATA26" bit_position = "'h1A"/>
+        <Field bit_name = "DATA25" bit_position = "'h19"/>
+        <Field bit_name = "DATA24" bit_position = "'h18"/>
+        <Field bit_name = "DATA23" bit_position = "'h17"/>
+        <Field bit_name = "DATA22" bit_position = "'h16"/>
+        <Field bit_name = "DATA21" bit_position = "'h15"/>
+        <Field bit_name = "DATA20" bit_position = "'h14"/>
+        <Field bit_name = "DATA19" bit_position = "'h13"/>
+        <Field bit_name = "DATA18" bit_position = "'h12"/>
+        <Field bit_name = "DATA17" bit_position = "'h11"/>
+        <Field bit_name = "DATA16" bit_position = "'h10"/>
+        <Field bit_name = "DATA15" bit_position = "'hF"/>
+        <Field bit_name = "DATA14" bit_position = "'hE"/>
+        <Field bit_name = "DATA13" bit_position = "'hD"/>
+        <Field bit_name = "DATA12" bit_position = "'hC"/>
+        <Field bit_name = "DATA11" bit_position = "'hB"/>
+        <Field bit_name = "DATA10" bit_position = "'hA"/>
+        <Field bit_name = "DATA09" bit_position = "'h9"/>
+        <Field bit_name = "DATA08" bit_position = "'h8"/>
+        <Field bit_name = "DATA07" bit_position = "'h7"/>
+        <Field bit_name = "DATA06" bit_position = "'h6"/>
+        <Field bit_name = "DATA05" bit_position = "'h5"/>
+        <Field bit_name = "DATA04" bit_position = "'h4"/>
+        <Field bit_name = "DATA03" bit_position = "'h3"/>
+        <Field bit_name = "DATA02" bit_position = "'h2"/>
+        <Field bit_name = "DATA01" bit_position = "'h1"/>
+        <Field bit_name = "DATA00" bit_position = "'h0"/>
+    </Register_SPI_DATA_REGISTER> 
+
+</Register_Map>
