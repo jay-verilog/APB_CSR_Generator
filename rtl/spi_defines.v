@@ -1,0 +1,103 @@
+//-------------------------------------------------------------------------
+//// SPI Register Map - Auto-generated Verilog Defines    
+//-------------------------------------------------------------------------
+
+`define SPI_DATA_WIDTH 32
+`define SPI_ADDR_WIDTH 4
+`define SPI_REG_WIDTH  32
+
+// --------------------------
+// Register Addresses
+// --------------------------
+
+`define SPI_CONTROL_REGISTER1_ADDR 'h0
+`define SPI_CONTROL_REGISTER2_ADDR 'h1
+`define SPI_BAUD_RATE_REGISTER_ADDR 'h2
+`define SPI_STATUS_REGISTER_ADDR 'h3
+`define SPI_DATA_REGISTER_ADDR 'h4
+
+// --------------------------
+// Register Reset Values
+// --------------------------
+
+`define SPI_CONTROL_REGISTER1_RST 32'h0
+`define SPI_CONTROL_REGISTER2_RST 32'h4
+`define SPI_BAUD_RATE_REGISTER_RST 32'h0
+`define SPI_STATUS_REGISTER_RST 32'h0
+`define SPI_DATA_REGISTER_RST 32'h0
+
+// --------------------------
+// Vector Output Widths
+// --------------------------
+
+`define SPI_SPPR_O_WIDTH 3
+`define SPI_SPR_O_WIDTH 3
+`define SPI_DATA_O_WIDTH 32
+
+// --------------------------
+// Register Bit Positions
+// --------------------------
+
+//---------------- CONTROL_REGISTER1 -----------
+`define SPI_CONTROL_REGISTER1_SPIE_POS 'h7
+`define SPI_CONTROL_REGISTER1_SPE_POS 'h6
+`define SPI_CONTROL_REGISTER1_SPTIE_POS 'h5
+`define SPI_CONTROL_REGISTER1_MSTR_POS 'h4
+`define SPI_CONTROL_REGISTER1_CPOL_POS 'h3
+`define SPI_CONTROL_REGISTER1_CPHA_POS 'h2
+`define SPI_CONTROL_REGISTER1_SSOE_POS 'h1
+`define SPI_CONTROL_REGISTER1_LSBFE_POS 'h0
+
+//---------------- CONTROL_REGISTER2 -----------
+`define SPI_CONTROL_REGISTER2_MODFEN_POS 'h3
+`define SPI_CONTROL_REGISTER2_BIDIROE_POS 'h2
+`define SPI_CONTROL_REGISTER2_SPISWAI_POS 'h1
+`define SPI_CONTROL_REGISTER2_SPC0_POS 'h0
+
+//---------------- BAUD_RATE_REGISTER -----------
+`define SPI_BAUD_RATE_REGISTER_SPPR2_POS 'h6
+`define SPI_BAUD_RATE_REGISTER_SPPR1_POS 'h5
+`define SPI_BAUD_RATE_REGISTER_SPPR0_POS 'h4
+`define SPI_BAUD_RATE_REGISTER_SPR2_POS 'h2
+`define SPI_BAUD_RATE_REGISTER_SPR1_POS 'h1
+`define SPI_BAUD_RATE_REGISTER_SPR0_POS 'h0
+
+//---------------- STATUS_REGISTER -----------
+`define SPI_STATUS_REGISTER_SPIF_POS 'h7
+`define SPI_STATUS_REGISTER_SPTEF_POS 'h5
+`define SPI_STATUS_REGISTER_MODF_POS 'h4
+
+//---------------- DATA_REGISTER -----------
+`define SPI_DATA_REGISTER_DATA31_POS 'h1F
+`define SPI_DATA_REGISTER_DATA30_POS 'h1E
+`define SPI_DATA_REGISTER_DATA29_POS 'h1D
+`define SPI_DATA_REGISTER_DATA28_POS 'h1C
+`define SPI_DATA_REGISTER_DATA27_POS 'h1B
+`define SPI_DATA_REGISTER_DATA26_POS 'h1A
+`define SPI_DATA_REGISTER_DATA25_POS 'h19
+`define SPI_DATA_REGISTER_DATA24_POS 'h18
+`define SPI_DATA_REGISTER_DATA23_POS 'h17
+`define SPI_DATA_REGISTER_DATA22_POS 'h16
+`define SPI_DATA_REGISTER_DATA21_POS 'h15
+`define SPI_DATA_REGISTER_DATA20_POS 'h14
+`define SPI_DATA_REGISTER_DATA19_POS 'h13
+`define SPI_DATA_REGISTER_DATA18_POS 'h12
+`define SPI_DATA_REGISTER_DATA17_POS 'h11
+`define SPI_DATA_REGISTER_DATA16_POS 'h10
+`define SPI_DATA_REGISTER_DATA15_POS 'hF
+`define SPI_DATA_REGISTER_DATA14_POS 'hE
+`define SPI_DATA_REGISTER_DATA13_POS 'hD
+`define SPI_DATA_REGISTER_DATA12_POS 'hC
+`define SPI_DATA_REGISTER_DATA11_POS 'hB
+`define SPI_DATA_REGISTER_DATA10_POS 'hA
+`define SPI_DATA_REGISTER_DATA09_POS 'h9
+`define SPI_DATA_REGISTER_DATA08_POS 'h8
+`define SPI_DATA_REGISTER_DATA07_POS 'h7
+`define SPI_DATA_REGISTER_DATA06_POS 'h6
+`define SPI_DATA_REGISTER_DATA05_POS 'h5
+`define SPI_DATA_REGISTER_DATA04_POS 'h4
+`define SPI_DATA_REGISTER_DATA03_POS 'h3
+`define SPI_DATA_REGISTER_DATA02_POS 'h2
+`define SPI_DATA_REGISTER_DATA01_POS 'h1
+`define SPI_DATA_REGISTER_DATA00_POS 'h0
+
