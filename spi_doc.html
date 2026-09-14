@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SPI IP Block</title>
+
+    <style>
+
+        /* =========================
+           BODY
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+            color: #222;
+        }
+
+
+        /* =========================
+           HEADINGS
+        ========================= */
+
+        h1 {
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #374151;
+            border-bottom: 3px solid #b7c3dd;
+            padding-left: 10px;
+            padding-bottom: 5px;
+        }
+
+
+        /* =========================
+           NORMAL TABLE
+        ========================= */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 25px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1f2937;
+            color: white;
+        }
+
+
+        /* =========================
+           ADDRESS
+        ========================= */
+
+        addr {
+            background-color: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+            color: #b91c1c;
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           LINKS
+        ========================= */
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           REGISTER HEADER
+        ========================= */
+
+        .register-header {
+            width: 100%;
+
+            background-color: #1f2937;
+            color: white;
+
+            padding: 16px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .register-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .register-offset {
+            background-color: #60a5fa;
+            color: #111827;
+
+            padding: 7px 12px;
+
+            border-radius: 5px;
+
+            font-family: "Courier New", monospace;
+            font-size: 16px;
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           32 BIT TABLE
+        ========================= */
+
+        .bit-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+
+            background-color: white;
+
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+
+        /* BIT NUMBER */
+
+        .bit-table th {
+            border: 1px solid #d1d5db;
+
+            padding: 8px 0;
+
+            text-align: center;
+
+            font-size: 12px;
+
+            white-space: normal;
+            word-break: break-word;
+            line-height: 1.15;
+
+            background-color: #1f2937;
+            color: white;
+        }
+
+
+        /* DATA31, DATA30, etc. */
+
+        .bit-table td {
+            border: 1px solid #d1d5db;
+
+            padding: 8px 0;
+
+            text-align: center;
+
+            font-size: 9px;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           LAPTOP 1366 / 1440
+        ========================= */
+
+        @media (max-width: 1440px) {
+
+            body {
+                padding: 25px;
+            }
+
+            .bit-table th {
+                font-size: 12px;
+            }
+
+            .bit-table td {
+                font-size: 9px;
+            }
+
+            .register-name {
+                font-size: 18px;
+            }
+
+            .register-offset {
+                font-size: 15px;
+            }
+        }
+
+        /* =========================
+           SMALL LAPTOP
+        ========================= */
+
+        @media (max-width: 1200px) {
+
+            body {
+                padding: 21px;
+            }
+
+            .bit-table th {
+                font-size: 11px;
+            }
+
+            .bit-table td {
+                font-size: 8px;
+            }
+
+            .register-name {
+                font-size: 16px;
+            }
+
+            .register-offset {
+                font-size: 14px;
+            }
+        }
+
+        /* =========================
+           VERY SMALL SCREEN
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            body {
+                padding: 11px;
+            }
+
+            .bit-table th {
+                font-size: 10px;
+            }
+
+            .bit-table td {
+                font-size: 7px;
+            }
+
+            .register-header {
+                padding: 13px;
+            }
+
+            .register-name {
+                font-size: 14px;
+            }
+
+            .register-offset {
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <h1>SPI IP Block</h1>
+
+    <!-- =========================
+         IP INFORMATION
+    ========================== -->
+
+    <table>
+
+        <tr>
+            <th> IP BLOCK NAME</th>
+            <td> SPI</td>
+        </tr>
+
+        <tr>
+            <th>Base Address</th>
+            <td>
+                <addr>'h3500_0000</addr>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Bus Interface</th>
+            <td>APB-Lite</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =========================
+         REGISTER MAP
+    ========================== -->
+
+    <h2>Register Map Summary</h2>
+
+
+    <table>
+
+        <tr>
+            <th style="width:7%;">OFFSET</th>
+            <th style="width:16%;">REGISTER NAME</th>
+            <th style="width:8%;">ACCESS TYPE</th>
+            <th style="width:9%;">RESET VALUE</th>
+            <th style="width:60%;">FUNCTIONAL DESCRIPTION</th>
+        </tr>
+
+
+        <tr>
+
+            <td><addr>'h0</addr></td>
+            <td><a href="#CONTROL_REGISTER1">CONTROL_REGISTER1</a></td>
+            <td>RW</td>
+            <td><addr>'h0000_0000</addr></td>
+            <td>SPI control register used to configure SPI operation, interrupt generation, master mode, clock polarity, clock phase, slave select output, and bit transmission order.</td>
+        </tr>
+
+
+        <tr>
+
+            <td><addr>'h1</addr></td>
+            <td><a href="#CONTROL_REGISTER2">CONTROL_REGISTER2</a></td>
+            <td>RW</td>
+            <td><addr>'h0000_0010</addr></td>
+            <td>SPI control register used to configure additional SPI operating modes and serial clock prescaling.</td>
+        </tr>
+
+
+        <tr>
+
+            <td><addr>'h2</addr></td>
+            <td><a href="#BAUD_RATE_REGISTER">BAUD_RATE_REGISTER</a></td>
+            <td>RW</td>
+            <td><addr>'h0000_0000</addr></td>
+            <td>SPI baud rate register used to configure the serial clock frequency.</td>
+        </tr>
+
+
+        <tr>
+
+            <td><addr>'h3</addr></td>
+            <td><a href="#STATUS_REGISTER">STATUS_REGISTER</a></td>
+            <td>RO</td>
+            <td><addr>'h0000_0000</addr></td>
+            <td>SPI status register containing flags that indicate transfer completion, transmit buffer status, and mode fault conditions.</td>
+        </tr>
+
+
+        <tr>
+
+            <td><addr>'h4</addr></td>
+            <td><a href="#DATA_REGISTER">DATA_REGISTER</a></td>
+            <td>RW</td>
+            <td><addr>'h0000_0000</addr></td>
+            <td>SPI data register used to store data for transmission and received data.</td>
+        </tr>
+
+
+        <tr>
+
+            <td><addr>'h5</addr></td>
+            <td><a href="#COMMAND_REGISTER">COMMAND_REGISTER</a></td>
+            <td>WO</td>
+            <td><addr>'h0000_0000</addr></td>
+            <td>SPI command register used to issue control commands to the SPI module. This register is write-only.</td>
+        </tr>
+
+
+    </table>
+
+    <h2>Detailed Register Descriptions</h2>
+
+
+
+    <div class = "register-header" id="CONTROL_REGISTER1">
+        <span class="register-name"> CONTROL_REGISTER1 </span>
+        <span class="register-offset">Offset Address : 'h0</span>
+    </div>
+
+    <table class="bit-table">
+        <tr>
+            <td>31</td>
+            <td>30</td>
+            <td>29</td>
+            <td>28</td>
+            <td>27</td>
+            <td>26</td>
+            <td>25</td>
+            <td>24</td>
+            <td>23</td>
+            <td>22</td>
+            <td>21</td>
+            <td>20</td>
+            <td>19</td>
+            <td>18</td>
+            <td>17</td>
+            <td>16</td>
+            <td>15</td>
+            <td>14</td>
+            <td>13</td>
+            <td>12</td>
+            <td>11</td>
+            <td>10</td>
+            <td>09</td>
+            <td>08</td>
+            <td>07</td>
+            <td>06</td>
+            <td>05</td>
+            <td>04</td>
+            <td>03</td>
+            <td>02</td>
+            <td>01</td>
+            <td>00</td>
+        </tr>
+
+        <tr>
+            <th colspan="24">RESERVED</th>
+            <th colspan="1">SPIE</th>
+            <th colspan="1">SPE</th>
+            <th colspan="1">SPTIE</th>
+            <th colspan="1">MSTR</th>
+            <th colspan="1">CPOL</th>
+            <th colspan="1">CPHA</th>
+            <th colspan="1">SSOE</th>
+            <th colspan="1">LSBFE</th>
+        </tr>
+
+        <tr>
+            <td colspan="24">RO</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th style="width:8%;">BITS</th>
+            <th style="width:14%;">FIELD NAME</th>
+            <th style="width:10%;">ACCESS TYPE</th>
+            <th style="width:12%;">RESET VALUE</th>
+            <th style="width:56%;">FUNCTIONAL DESCRIPTION</th>
+        </tr>
+
+        <tr style="color:#9ca3af;">
+            <td>31:8</td>
+            <td>RESERVED</td>
+            <td>RO</td>
+            <td>'h00_0000</td>
+            <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>SPIE</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>SPI interrupt enable. Enables SPI interrupt generation when set to 1.</td>
+        </tr>
+
+        <tr>
+            <td>6</td>
+            <td>SPE</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>SPI enable. Enables the SPI module when set to 1.</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>SPTIE</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>SPI transmit interrupt enable. Enables an interrupt when the SPI transmit buffer is empty.</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>MSTR</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Master mode select. Selects the SPI module as master when set to 1 and slave when set to 0.</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>CPOL</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Clock polarity. Determines the idle level of the SPI clock.</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>CPHA</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Clock phase. Selects the SPI clock edge used for data sampling and shifting.</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>SSOE</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Slave select output enable. Controls automatic slave select output behavior in master mode.</td>
+        </tr>
+
+        <tr>
+            <td>0</td>
+            <td>LSBFE</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>LSB first enable. Transmits and receives the least significant bit first when set to 1.</td>
+        </tr>
+
+    </table>
+
+    <div class = "register-header" id="CONTROL_REGISTER2">
+        <span class="register-name"> CONTROL_REGISTER2 </span>
+        <span class="register-offset">Offset Address : 'h1</span>
+    </div>
+
+    <table class="bit-table">
+        <tr>
+            <td>31</td>
+            <td>30</td>
+            <td>29</td>
+            <td>28</td>
+            <td>27</td>
+            <td>26</td>
+            <td>25</td>
+            <td>24</td>
+            <td>23</td>
+            <td>22</td>
+            <td>21</td>
+            <td>20</td>
+            <td>19</td>
+            <td>18</td>
+            <td>17</td>
+            <td>16</td>
+            <td>15</td>
+            <td>14</td>
+            <td>13</td>
+            <td>12</td>
+            <td>11</td>
+            <td>10</td>
+            <td>09</td>
+            <td>08</td>
+            <td>07</td>
+            <td>06</td>
+            <td>05</td>
+            <td>04</td>
+            <td>03</td>
+            <td>02</td>
+            <td>01</td>
+            <td>00</td>
+        </tr>
+
+        <tr>
+            <th colspan="25">RESERVED</th>
+            <th colspan="3">SAMPLE</th>
+            <th colspan="1">MODFEN</th>
+            <th colspan="1">BIDIROE</th>
+            <th colspan="1">SPISWAI</th>
+            <th colspan="1">SPC0</th>
+        </tr>
+
+        <tr>
+            <td colspan="25">RO</td>
+            <td colspan="3">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+            <td colspan="1">WR</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th style="width:8%;">BITS</th>
+            <th style="width:14%;">FIELD NAME</th>
+            <th style="width:10%;">ACCESS TYPE</th>
+            <th style="width:12%;">RESET VALUE</th>
+            <th style="width:56%;">FUNCTIONAL DESCRIPTION</th>
+        </tr>
+
+        <tr style="color:#9ca3af;">
+            <td>31:7</td>
+            <td>RESERVED</td>
+            <td>RO</td>
+            <td>'h000_0000</td>
+            <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
+        </tr>
+
+        <tr>
+            <td>6:4</td>
+            <td>SAMPLE</td>
+            <td>WR</td>
+            <td>'h1</td>
+            <td>Serial pre-prescaler control. Selects the input clock division factor before the serial prescaler.</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>MODFEN</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Mode fault enable. Enables mode fault detection in SPI master mode.</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>BIDIROE</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Bidirectional output enable. Enables the SPI data output in bidirectional mode.</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>SPISWAI</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>SPI stop in wait mode. Controls SPI operation when the system enters wait mode.</td>
+        </tr>
+
+        <tr>
+            <td>0</td>
+            <td>SPC0</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Serial pin control. Controls the SPI serial pin configuration.</td>
+        </tr>
+
+    </table>
+
+    <div class = "register-header" id="BAUD_RATE_REGISTER">
+        <span class="register-name"> BAUD_RATE_REGISTER </span>
+        <span class="register-offset">Offset Address : 'h2</span>
+    </div>
+
+    <table class="bit-table">
+        <tr>
+            <td>31</td>
+            <td>30</td>
+            <td>29</td>
+            <td>28</td>
+            <td>27</td>
+            <td>26</td>
+            <td>25</td>
+            <td>24</td>
+            <td>23</td>
+            <td>22</td>
+            <td>21</td>
+            <td>20</td>
+            <td>19</td>
+            <td>18</td>
+            <td>17</td>
+            <td>16</td>
+            <td>15</td>
+            <td>14</td>
+            <td>13</td>
+            <td>12</td>
+            <td>11</td>
+            <td>10</td>
+            <td>09</td>
+            <td>08</td>
+            <td>07</td>
+            <td>06</td>
+            <td>05</td>
+            <td>04</td>
+            <td>03</td>
+            <td>02</td>
+            <td>01</td>
+            <td>00</td>
+        </tr>
+
+        <tr>
+            <th colspan="25">RESERVED</th>
+            <th colspan="3">SPPR</th>
+            <th colspan="1">RESERVED</th>
+            <th colspan="3">SPR</th>
+        </tr>
+
+        <tr>
+            <td colspan="25">RO</td>
+            <td colspan="3">WR</td>
+            <td colspan="1">RO</td>
+            <td colspan="3">WR</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th style="width:8%;">BITS</th>
+            <th style="width:14%;">FIELD NAME</th>
+            <th style="width:10%;">ACCESS TYPE</th>
+            <th style="width:12%;">RESET VALUE</th>
+            <th style="width:56%;">FUNCTIONAL DESCRIPTION</th>
+        </tr>
+
+        <tr style="color:#9ca3af;">
+            <td>31:7</td>
+            <td>RESERVED</td>
+            <td>RO</td>
+            <td>'h000_0000</td>
+            <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
+        </tr>
+
+        <tr>
+            <td>6:4</td>
+            <td>SPPR</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Serial pre-prescaler control. Selects the division factor of the SPI input clock before the serial prescaler.</td>
+        </tr>
+
+        <tr style="color:#9ca3af;">
+            <td>3</td>
+            <td>RESERVED</td>
+            <td>RO</td>
+            <td>'h0</td>
+            <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
+        </tr>
+
+        <tr>
+            <td>2:0</td>
+            <td>SPR</td>
+            <td>WR</td>
+            <td>'h0</td>
+            <td>Serial prescaler control. Selects the SPI serial clock prescaler value.<br>00 - no change<br>01 - reset<br>10 - set<br>11 - toggle</td>
+        </tr>
+
+    </table>
+
+    <div class = "register-header" id="STATUS_REGISTER">
+        <span class="register-name"> STATUS_REGISTER </span>
+        <span class="register-offset">Offset Address : 'h3</span>
+    </div>
+
+    <table class="bit-table">
+        <tr>
+            <td>31</td>
+            <td>30</td>
+            <td>29</td>
+            <td>28</td>
+            <td>27</td>
+            <td>26</td>
+            <td>25</td>
+            <td>24</td>
+            <td>23</td>
+            <td>22</td>
+            <td>21</td>
+            <td>20</td>
+            <td>19</td>
+            <td>18</td>
+            <td>17</td>
+            <td>16</td>
+            <td>15</td>
+            <td>14</td>
+            <td>13</td>
+            <td>12</td>
+            <td>11</td>
+            <td>10</td>
+            <td>09</td>
+            <td>08</td>
+            <td>07</td>
+            <td>06</td>
+            <td>05</td>
+            <td>04</td>
+            <td>03</td>
+            <td>02</td>
+            <td>01</td>
+            <td>00</td>
+        </tr>
+
+        <tr>
+            <th colspan="24">RESERVED</th>
+            <th colspan="1">SPIF</th>
+            <th colspan="1">RESERVED</th>
+            <th colspan="1">SPTEF</th>
+            <th colspan="1">MODF</th>
+            <th colspan="4">RESERVED</th>
+        </tr>
+
+        <tr>
+            <td colspan="24">RO</td>
+            <td colspan="1">RO</td>
+            <td colspan="1">RO</td>
+            <td colspan="1">RO</td>
+            <td colspan="1">RO</td>
+            <td colspan="4">RO</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th style="width:8%;">BITS</th>
+            <th style="width:14%;">FIELD NAME</th>
+            <th style="width:10%;">ACCESS TYPE</th>
+            <th style="width:12%;">RESET VALUE</th>
+            <th style="width:56%;">FUNCTIONAL DESCRIPTION</th>
+        </tr>
+
+        <tr style="color:#9ca3af;">
+            <td>31:8</td>
+            <td>RESERVED</td>
+            <td>RO</td>
+            <td>'h00_0000</td>
+            <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>SPIF</td>
+            <td>RO</td>
+            <td>'h0</td>
+            <td>SPI interrupt flag. Indicates that an SPI transfer has completed.</td>
+        </tr>
+
+        <tr style="color:#9ca3af;">
+            <td>6</td>
+            <td>RESERVED</td>
+            <td>RO</td>
+            <td>'h0</td>
+            <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>SPTEF</td>
+            <td>RO</td>
+            <td>'h0</td>
+            <td>SPI transmit buffer empty flag. Indicates that the SPI transmit buffer is empty and ready for new data.</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>MODF</td>
+            <td>RO</td>
+            <td>'h0</td>
+            <td>Mode fault flag. Indicates that a mode fault condition has occurred during SPI operation.</td>
+        </tr>
+
+        <tr style="color:#9ca3af;">
+            <td>3:0</td>
+            <td>RESERVED</td>
+            <td>RO</td>
+            <td>'h0</td>
+            <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
+        </tr>
+
+    </table>
+
+    <div class = "register-header" id="DATA_REGISTER">
+        <span class="register-name"> DATA_REGISTER </span>
+        <span class="register-offset">Offset Address : 'h4</span>
+    </div>
+
+    <table class="bit-table">
+        <tr>
+            <td>31</td>
+            <td>30</td>
+            <td>29</td>
+            <td>28</td>
+            <td>27</td>
+            <td>26</td>
+            <td>25</td>
+            <td>24</td>
+            <td>23</td>
+            <td>22</td>
+            <td>21</td>
+            <td>20</td>
+            <td>19</td>
+            <td>18</td>
+            <td>17</td>
+            <td>16</td>
+            <td>15</td>
+            <td>14</td>
+            <td>13</td>
+            <td>12</td>
+            <td>11</td>
+            <td>10</td>
+            <td>09</td>
+            <td>08</td>
+            <td>07</td>
+            <td>06</td>
+            <td>05</td>
+            <td>04</td>
+            <td>03</td>
+            <td>02</td>
+            <td>01</td>
+            <td>00</td>
+        </tr>
+
+        <tr>
+            <th colspan="32">DATA</th>
+        </tr>
+
+        <tr>
+            <td colspan="32">WR</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th style="width:8%;">BITS</th>
+            <th style="width:14%;">FIELD NAME</th>
+            <th style="width:10%;">ACCESS TYPE</th>
+            <th style="width:12%;">RESET VALUE</th>
+            <th style="width:56%;">FUNCTIONAL DESCRIPTION</th>
+        </tr>
+
+        <tr>
+            <td>31:0</td>
+            <td>DATA</td>
+            <td>WR</td>
+            <td>'h0000_0000</td>
+            <td>SPI data field. Contains the data to be transmitted or the data received through the SPI interface.</td>
+        </tr>
+
+    </table>
+
+    <div class = "register-header" id="COMMAND_REGISTER">
+        <span class="register-name"> COMMAND_REGISTER </span>
+        <span class="register-offset">Offset Address : 'h5</span>
+    </div>
+
+    <table class="bit-table">
+        <tr>
+            <td>31</td>
+            <td>30</td>
+            <td>29</td>
+            <td>28</td>
+            <td>27</td>
+            <td>26</td>
+            <td>25</td>
+            <td>24</td>
+            <td>23</td>
+            <td>22</td>
+            <td>21</td>
+            <td>20</td>
+            <td>19</td>
+            <td>18</td>
+            <td>17</td>
+            <td>16</td>
+            <td>15</td>
+            <td>14</td>
+            <td>13</td>
+            <td>12</td>
+            <td>11</td>
+            <td>10</td>
+            <td>09</td>
+            <td>08</td>
+            <td>07</td>
+            <td>06</td>
+            <td>05</td>
+            <td>04</td>
+            <td>03</td>
+            <td>02</td>
+            <td>01</td>
+            <td>00</td>
+        </tr>
+
+        <tr>
+            <th colspan="29">RESERVED</th>
+            <th colspan="1">START</th>
+            <th colspan="1">CLEAR</th>
+            <th colspan="1">ABORT</th>
+        </tr>
+
+        <tr>
+            <td colspan="29">RO</td>
+            <td colspan="1">WO</td>
+            <td colspan="1">WO</td>
+            <td colspan="1">WO</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th style="width:8%;">BITS</th>
+            <th style="width:14%;">FIELD NAME</th>
+            <th style="width:10%;">ACCESS TYPE</th>
+            <th style="width:12%;">RESET VALUE</th>
+            <th style="width:56%;">FUNCTIONAL DESCRIPTION</th>
+        </tr>
+
+        <tr style="color:#9ca3af;">
+            <td>31:3</td>
+            <td>RESERVED</td>
+            <td>RO</td>
+            <td>'h0000_0000</td>
+            <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>START</td>
+            <td>WO</td>
+            <td>'h0</td>
+            <td>Start command. Writing 1 starts an SPI transfer.</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>CLEAR</td>
+            <td>WO</td>
+            <td>'h0</td>
+            <td>Clear command. Writing 1 clears the SPI status and control state.</td>
+        </tr>
+
+        <tr>
+            <td>0</td>
+            <td>ABORT</td>
+            <td>WO</td>
+            <td>'h0</td>
+            <td>Abort command. Writing 1 aborts the current SPI transfer.</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
