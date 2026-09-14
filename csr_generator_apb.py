@@ -27,8 +27,8 @@ def doc (xml_file):
         regs.append(reg)
 
     register_width_int = int(register_width)
-
-    with open(f"{block_name.lower()}_doc.html", "w", encoding="utf-8") as file:
+    os.makedirs("html", exist_ok=True)
+    with open(f"html/{block_name.lower()}_doc.html", "w", encoding="utf-8") as file:
         file.write("<!DOCTYPE html>\n")
         file.write("<html lang=\"en\">\n")
         file.write("\n")
@@ -379,7 +379,7 @@ def doc (xml_file):
             elif reg_access_type and reg_access_type == {'wo'}:
                 reg_access_disp = "WO"
             else:
-                reg_access_disp = "RW"
+                reg_access_disp = "WR"
 
             reg_rst_val = 0
 
@@ -503,9 +503,9 @@ def doc (xml_file):
                         pos -= 1
                     span_lsb = pos + 1
                     spans.append({
-                        'name': 'RESERVED', 'access': 'RO', 'reset': 0,
+                        'name': 'RESERVED', 'access': '-', 'reset': 0,
                         'msb': span_msb, 'lsb': span_lsb,
-                        'desc': 'Reserved for future expansion. Reads return 0. Writes have no effect.'
+                        'desc': '-'
                     })
                 else:
                     spans.append(info)
@@ -1208,7 +1208,7 @@ def main():
     print(f"  - rtl/{block_name.lower()}_csr.v")
     print("------------------------------------------")
     print(f"Document file:")
-    print(f"  - {block_name.lower()}_doc.html")
+    print(f"  - html/{block_name.lower()}_doc.html")
     print("------------------------------------------")
     print("******************************************")
 
