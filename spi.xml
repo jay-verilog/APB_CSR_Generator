@@ -13,7 +13,7 @@
     </address_width>
 
     <base_address
-        base_addr = "h3500_0000">
+        base_addr = "'h3500_0000">
     </base_address>
 
     <register_width
@@ -151,7 +151,7 @@
             vector_field_reset        = "000"
             vector_field_position_msb = "2"
             vector_field_position_lsb = "0"
-            vector_field_description  = "Serial prescaler control. Selects the SPI serial clock prescaler value."/>
+            vector_field_description  = "Serial prescaler control. Selects the SPI serial clock prescaler value. \n 00 - no change \n 01 - reset \n 10 - set \n 11 - toggle"/>
 
     </Register_SPI_BAUD_RATE_REGISTER>
 
@@ -212,7 +212,7 @@
             field_name        = "START"
             field_access_type = "wo"
             field_reset_value = "0"
-            field_position    = "0"
+            field_position    = "2"
             field_description = "Start command. Writing 1 starts an SPI transfer."/>
 
         <Field
@@ -226,7 +226,7 @@
             field_name        = "ABORT"
             field_access_type = "wo"
             field_reset_value = "0"
-            field_position    = "2"
+            field_position    = "0"
             field_description = "Abort command. Writing 1 aborts the current SPI transfer."/>
 
     </Register_SPI_COMMAND_REGISTER>
