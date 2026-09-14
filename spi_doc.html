@@ -3,8 +3,6 @@
 
 <head>
 
-
-    
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -338,7 +336,7 @@
 
             <td><addr>'h0</addr></td>
             <td><a href="#CONTROL_REGISTER1">CONTROL_REGISTER1</a></td>
-            <td>RW</td>
+            <td>WR</td>
             <td><addr>'h0000_0000</addr></td>
             <td>SPI control register used to configure SPI operation, interrupt generation, master mode, clock polarity, clock phase, slave select output, and bit transmission order.</td>
         </tr>
@@ -348,7 +346,7 @@
 
             <td><addr>'h1</addr></td>
             <td><a href="#CONTROL_REGISTER2">CONTROL_REGISTER2</a></td>
-            <td>RW</td>
+            <td>WR</td>
             <td><addr>'h0000_0010</addr></td>
             <td>SPI control register used to configure additional SPI operating modes and serial clock prescaling.</td>
         </tr>
@@ -358,7 +356,7 @@
 
             <td><addr>'h2</addr></td>
             <td><a href="#BAUD_RATE_REGISTER">BAUD_RATE_REGISTER</a></td>
-            <td>RW</td>
+            <td>WR</td>
             <td><addr>'h0000_0000</addr></td>
             <td>SPI baud rate register used to configure the serial clock frequency.</td>
         </tr>
@@ -378,7 +376,7 @@
 
             <td><addr>'h4</addr></td>
             <td><a href="#DATA_REGISTER">DATA_REGISTER</a></td>
-            <td>RW</td>
+            <td>WR</td>
             <td><addr>'h0000_0000</addr></td>
             <td>SPI data register used to store data for transmission and received data.</td>
         </tr>
@@ -454,7 +452,7 @@
         </tr>
 
         <tr>
-            <td colspan="24">RO</td>
+            <td colspan="24">-</td>
             <td colspan="1">WR</td>
             <td colspan="1">WR</td>
             <td colspan="1">WR</td>
@@ -478,7 +476,7 @@
         <tr style="color:#9ca3af;">
             <td>31:8</td>
             <td>RESERVED</td>
-            <td>RO</td>
+            <td>-</td>
             <td>'h00_0000</td>
             <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
         </tr>
@@ -600,7 +598,7 @@
         </tr>
 
         <tr>
-            <td colspan="25">RO</td>
+            <td colspan="25">-</td>
             <td colspan="3">WR</td>
             <td colspan="1">WR</td>
             <td colspan="1">WR</td>
@@ -621,7 +619,7 @@
         <tr style="color:#9ca3af;">
             <td>31:7</td>
             <td>RESERVED</td>
-            <td>RO</td>
+            <td>-</td>
             <td>'h000_0000</td>
             <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
         </tr>
@@ -717,9 +715,9 @@
         </tr>
 
         <tr>
-            <td colspan="25">RO</td>
+            <td colspan="25">-</td>
             <td colspan="3">WR</td>
-            <td colspan="1">RO</td>
+            <td colspan="1">-</td>
             <td colspan="3">WR</td>
         </tr>
     </table>
@@ -736,7 +734,7 @@
         <tr style="color:#9ca3af;">
             <td>31:7</td>
             <td>RESERVED</td>
-            <td>RO</td>
+            <td>-</td>
             <td>'h000_0000</td>
             <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
         </tr>
@@ -752,7 +750,7 @@
         <tr style="color:#9ca3af;">
             <td>3</td>
             <td>RESERVED</td>
-            <td>RO</td>
+            <td>-</td>
             <td>'h0</td>
             <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
         </tr>
@@ -818,12 +816,12 @@
         </tr>
 
         <tr>
-            <td colspan="24">RO</td>
+            <td colspan="24">-</td>
+            <td colspan="1">RO</td>
+            <td colspan="1">-</td>
             <td colspan="1">RO</td>
             <td colspan="1">RO</td>
-            <td colspan="1">RO</td>
-            <td colspan="1">RO</td>
-            <td colspan="4">RO</td>
+            <td colspan="4">-</td>
         </tr>
     </table>
 
@@ -839,7 +837,7 @@
         <tr style="color:#9ca3af;">
             <td>31:8</td>
             <td>RESERVED</td>
-            <td>RO</td>
+            <td>-</td>
             <td>'h00_0000</td>
             <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
         </tr>
@@ -855,7 +853,7 @@
         <tr style="color:#9ca3af;">
             <td>6</td>
             <td>RESERVED</td>
-            <td>RO</td>
+            <td>-</td>
             <td>'h0</td>
             <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
         </tr>
@@ -879,7 +877,7 @@
         <tr style="color:#9ca3af;">
             <td>3:0</td>
             <td>RESERVED</td>
-            <td>RO</td>
+            <td>-</td>
             <td>'h0</td>
             <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
         </tr>
@@ -1004,7 +1002,7 @@
         </tr>
 
         <tr>
-            <td colspan="29">RO</td>
+            <td colspan="29">-</td>
             <td colspan="1">WO</td>
             <td colspan="1">WO</td>
             <td colspan="1">WO</td>
@@ -1023,7 +1021,7 @@
         <tr style="color:#9ca3af;">
             <td>31:3</td>
             <td>RESERVED</td>
-            <td>RO</td>
+            <td>-</td>
             <td>'h0000_0000</td>
             <td>Reserved for future expansion. Reads return 0. Writes have no effect.</td>
         </tr>
@@ -1056,5 +1054,3 @@
 
 </body>
 </html>
-
-
