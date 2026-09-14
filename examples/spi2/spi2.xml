@@ -1,0 +1,3524 @@
+<Register_Map>
+
+    <block_name
+        block_name = "spi2">
+    </block_name>
+
+    <data_width
+        data_width = "32">
+    </data_width>
+
+    <address_width
+        addr_width = "32">
+    </address_width>
+
+    <base_address
+        base_addr = "'h3500_0000">
+    </base_address>
+
+    <register_width
+        reg_width = "32">
+    </register_width>
+
+    <!-- SPI_CONTROL -->
+    <Register_SPI_CONTROL
+        reg_name        = "SPI_CONTROL"
+        offset_addr     = "'h0"
+        reg_description = "SPI control register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CONTROL_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi control control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CONTROL_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi control config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CONTROL_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi control value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CONTROL_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi control flag field."/>
+    </Register_SPI_CONTROL>
+
+    <!-- SPI_CONFIG -->
+    <Register_SPI_CONFIG
+        reg_name        = "SPI_CONFIG"
+        offset_addr     = "'h1"
+        reg_description = "SPI config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi config flag field."/>
+    </Register_SPI_CONFIG>
+
+    <!-- SPI_CLOCK -->
+    <Register_SPI_CLOCK
+        reg_name        = "SPI_CLOCK"
+        offset_addr     = "'h2"
+        reg_description = "SPI clock register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CLOCK_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi clock control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CLOCK_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi clock config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CLOCK_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi clock value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CLOCK_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi clock flag field."/>
+    </Register_SPI_CLOCK>
+
+    <!-- SPI_STATUS -->
+    <Register_SPI_STATUS
+        reg_name        = "SPI_STATUS"
+        offset_addr     = "'h3"
+        reg_description = "SPI status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi status flag field."/>
+    </Register_SPI_STATUS>
+
+    <!-- SPI_INTERRUPT -->
+    <Register_SPI_INTERRUPT
+        reg_name        = "SPI_INTERRUPT"
+        offset_addr     = "'h4"
+        reg_description = "SPI interrupt register.">
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi interrupt control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi interrupt config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi interrupt value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi interrupt flag field."/>
+    </Register_SPI_INTERRUPT>
+
+    <!-- SPI_FIFO -->
+    <Register_SPI_FIFO
+        reg_name        = "SPI_FIFO"
+        offset_addr     = "'h5"
+        reg_description = "SPI fifo register.">
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi fifo control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi fifo config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi fifo value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi fifo flag field."/>
+    </Register_SPI_FIFO>
+
+    <!-- SPI_TX_CONFIG -->
+    <Register_SPI_TX_CONFIG
+        reg_name        = "SPI_TX_CONFIG"
+        offset_addr     = "'h6"
+        reg_description = "SPI tx config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TX_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi tx config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi tx config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi tx config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi tx config flag field."/>
+    </Register_SPI_TX_CONFIG>
+
+    <!-- SPI_RX_CONFIG -->
+    <Register_SPI_RX_CONFIG
+        reg_name        = "SPI_RX_CONFIG"
+        offset_addr     = "'h7"
+        reg_description = "SPI rx config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RX_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi rx config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi rx config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi rx config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi rx config flag field."/>
+    </Register_SPI_RX_CONFIG>
+
+    <!-- SPI_FRAME_CONFIG -->
+    <Register_SPI_FRAME_CONFIG
+        reg_name        = "SPI_FRAME_CONFIG"
+        offset_addr     = "'h8"
+        reg_description = "SPI frame config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_FRAME_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi frame config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FRAME_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi frame config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FRAME_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi frame config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FRAME_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi frame config flag field."/>
+    </Register_SPI_FRAME_CONFIG>
+
+    <!-- SPI_MODE -->
+    <Register_SPI_MODE
+        reg_name        = "SPI_MODE"
+        offset_addr     = "'h9"
+        reg_description = "SPI mode register.">
+        <Vector_Field
+            vector_field_name         = "SPI_MODE_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi mode control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MODE_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi mode config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MODE_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi mode value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MODE_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi mode flag field."/>
+    </Register_SPI_MODE>
+
+    <!-- SPI_TIMING -->
+    <Register_SPI_TIMING
+        reg_name        = "SPI_TIMING"
+        offset_addr     = "'hA"
+        reg_description = "SPI timing register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TIMING_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi timing control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TIMING_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi timing config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TIMING_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi timing value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TIMING_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi timing flag field."/>
+    </Register_SPI_TIMING>
+
+    <!-- SPI_BAUD -->
+    <Register_SPI_BAUD
+        reg_name        = "SPI_BAUD"
+        offset_addr     = "'hB"
+        reg_description = "SPI baud register.">
+        <Vector_Field
+            vector_field_name         = "SPI_BAUD_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi baud control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BAUD_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi baud config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BAUD_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi baud value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BAUD_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi baud flag field."/>
+    </Register_SPI_BAUD>
+
+    <!-- SPI_PRESCALER -->
+    <Register_SPI_PRESCALER
+        reg_name        = "SPI_PRESCALER"
+        offset_addr     = "'hC"
+        reg_description = "SPI prescaler register.">
+        <Vector_Field
+            vector_field_name         = "SPI_PRESCALER_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi prescaler control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PRESCALER_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi prescaler config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PRESCALER_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi prescaler value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PRESCALER_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi prescaler flag field."/>
+    </Register_SPI_PRESCALER>
+
+    <!-- SPI_CHIP_SELECT -->
+    <Register_SPI_CHIP_SELECT
+        reg_name        = "SPI_CHIP_SELECT"
+        offset_addr     = "'hD"
+        reg_description = "SPI chip select register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CHIP_SELECT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi chip select control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHIP_SELECT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi chip select config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHIP_SELECT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi chip select value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHIP_SELECT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi chip select flag field."/>
+    </Register_SPI_CHIP_SELECT>
+
+    <!-- SPI_DATA_FORMAT -->
+    <Register_SPI_DATA_FORMAT
+        reg_name        = "SPI_DATA_FORMAT"
+        offset_addr     = "'hE"
+        reg_description = "SPI data format register.">
+        <Vector_Field
+            vector_field_name         = "SPI_DATA_FORMAT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi data format control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DATA_FORMAT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi data format config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DATA_FORMAT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi data format value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DATA_FORMAT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi data format flag field."/>
+    </Register_SPI_DATA_FORMAT>
+
+    <!-- SPI_TRANSFER -->
+    <Register_SPI_TRANSFER
+        reg_name        = "SPI_TRANSFER"
+        offset_addr     = "'hF"
+        reg_description = "SPI transfer register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TRANSFER_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi transfer control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TRANSFER_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi transfer config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TRANSFER_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi transfer value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TRANSFER_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi transfer flag field."/>
+    </Register_SPI_TRANSFER>
+
+    <!-- SPI_COMMAND -->
+    <Register_SPI_COMMAND
+        reg_name        = "SPI_COMMAND"
+        offset_addr     = "'h10"
+        reg_description = "SPI command register.">
+        <Vector_Field
+            vector_field_name         = "SPI_COMMAND_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi command control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_COMMAND_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi command config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_COMMAND_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi command value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_COMMAND_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi command flag field."/>
+    </Register_SPI_COMMAND>
+
+    <!-- SPI_RESPONSE -->
+    <Register_SPI_RESPONSE
+        reg_name        = "SPI_RESPONSE"
+        offset_addr     = "'h11"
+        reg_description = "SPI response register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RESPONSE_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi response control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESPONSE_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi response config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESPONSE_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi response value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESPONSE_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi response flag field."/>
+    </Register_SPI_RESPONSE>
+
+    <!-- SPI_ERROR -->
+    <Register_SPI_ERROR
+        reg_name        = "SPI_ERROR"
+        offset_addr     = "'h12"
+        reg_description = "SPI error register.">
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi error control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi error config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi error value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi error flag field."/>
+    </Register_SPI_ERROR>
+
+    <!-- SPI_TIMEOUT -->
+    <Register_SPI_TIMEOUT
+        reg_name        = "SPI_TIMEOUT"
+        offset_addr     = "'h13"
+        reg_description = "SPI timeout register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TIMEOUT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi timeout control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TIMEOUT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi timeout config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TIMEOUT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi timeout value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TIMEOUT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi timeout flag field."/>
+    </Register_SPI_TIMEOUT>
+
+    <!-- SPI_DMA_CONFIG -->
+    <Register_SPI_DMA_CONFIG
+        reg_name        = "SPI_DMA_CONFIG"
+        offset_addr     = "'h14"
+        reg_description = "SPI dma config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_DMA_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi dma config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DMA_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi dma config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DMA_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi dma config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DMA_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi dma config flag field."/>
+    </Register_SPI_DMA_CONFIG>
+
+    <!-- SPI_DMA_STATUS -->
+    <Register_SPI_DMA_STATUS
+        reg_name        = "SPI_DMA_STATUS"
+        offset_addr     = "'h15"
+        reg_description = "SPI dma status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_DMA_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi dma status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DMA_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi dma status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DMA_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi dma status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DMA_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi dma status flag field."/>
+    </Register_SPI_DMA_STATUS>
+
+    <!-- SPI_TX_DATA -->
+    <Register_SPI_TX_DATA
+        reg_name        = "SPI_TX_DATA"
+        offset_addr     = "'h16"
+        reg_description = "SPI tx data register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TX_DATA_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi tx data control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_DATA_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi tx data config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_DATA_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi tx data value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_DATA_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi tx data flag field."/>
+    </Register_SPI_TX_DATA>
+
+    <!-- SPI_RX_DATA -->
+    <Register_SPI_RX_DATA
+        reg_name        = "SPI_RX_DATA"
+        offset_addr     = "'h17"
+        reg_description = "SPI rx data register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RX_DATA_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi rx data control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_DATA_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi rx data config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_DATA_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi rx data value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_DATA_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi rx data flag field."/>
+    </Register_SPI_RX_DATA>
+
+    <!-- SPI_TX_STATUS -->
+    <Register_SPI_TX_STATUS
+        reg_name        = "SPI_TX_STATUS"
+        offset_addr     = "'h18"
+        reg_description = "SPI tx status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TX_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi tx status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi tx status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi tx status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi tx status flag field."/>
+    </Register_SPI_TX_STATUS>
+
+    <!-- SPI_RX_STATUS -->
+    <Register_SPI_RX_STATUS
+        reg_name        = "SPI_RX_STATUS"
+        offset_addr     = "'h19"
+        reg_description = "SPI rx status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RX_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi rx status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi rx status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi rx status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi rx status flag field."/>
+    </Register_SPI_RX_STATUS>
+
+    <!-- SPI_FIFO_CONTROL -->
+    <Register_SPI_FIFO_CONTROL
+        reg_name        = "SPI_FIFO_CONTROL"
+        offset_addr     = "'h1A"
+        reg_description = "SPI fifo control register.">
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_CONTROL_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi fifo control control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_CONTROL_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi fifo control config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_CONTROL_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi fifo control value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_CONTROL_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi fifo control flag field."/>
+    </Register_SPI_FIFO_CONTROL>
+
+    <!-- SPI_FIFO_STATUS -->
+    <Register_SPI_FIFO_STATUS
+        reg_name        = "SPI_FIFO_STATUS"
+        offset_addr     = "'h1B"
+        reg_description = "SPI fifo status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi fifo status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi fifo status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi fifo status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FIFO_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi fifo status flag field."/>
+    </Register_SPI_FIFO_STATUS>
+
+    <!-- SPI_TX_THRESHOLD -->
+    <Register_SPI_TX_THRESHOLD
+        reg_name        = "SPI_TX_THRESHOLD"
+        offset_addr     = "'h1C"
+        reg_description = "SPI tx threshold register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TX_THRESHOLD_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi tx threshold control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_THRESHOLD_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi tx threshold config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_THRESHOLD_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi tx threshold value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TX_THRESHOLD_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi tx threshold flag field."/>
+    </Register_SPI_TX_THRESHOLD>
+
+    <!-- SPI_RX_THRESHOLD -->
+    <Register_SPI_RX_THRESHOLD
+        reg_name        = "SPI_RX_THRESHOLD"
+        offset_addr     = "'h1D"
+        reg_description = "SPI rx threshold register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RX_THRESHOLD_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi rx threshold control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_THRESHOLD_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi rx threshold config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_THRESHOLD_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi rx threshold value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RX_THRESHOLD_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi rx threshold flag field."/>
+    </Register_SPI_RX_THRESHOLD>
+
+    <!-- SPI_INTERRUPT_MASK -->
+    <Register_SPI_INTERRUPT_MASK
+        reg_name        = "SPI_INTERRUPT_MASK"
+        offset_addr     = "'h1E"
+        reg_description = "SPI interrupt mask register.">
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_MASK_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi interrupt mask control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_MASK_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi interrupt mask config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_MASK_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi interrupt mask value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_MASK_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi interrupt mask flag field."/>
+    </Register_SPI_INTERRUPT_MASK>
+
+    <!-- SPI_INTERRUPT_STATUS -->
+    <Register_SPI_INTERRUPT_STATUS
+        reg_name        = "SPI_INTERRUPT_STATUS"
+        offset_addr     = "'h1F"
+        reg_description = "SPI interrupt status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi interrupt status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi interrupt status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi interrupt status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi interrupt status flag field."/>
+    </Register_SPI_INTERRUPT_STATUS>
+
+    <!-- SPI_INTERRUPT_CLEAR -->
+    <Register_SPI_INTERRUPT_CLEAR
+        reg_name        = "SPI_INTERRUPT_CLEAR"
+        offset_addr     = "'h20"
+        reg_description = "SPI interrupt clear register.">
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_CLEAR_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi interrupt clear control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_CLEAR_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi interrupt clear config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_CLEAR_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi interrupt clear value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERRUPT_CLEAR_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi interrupt clear flag field."/>
+    </Register_SPI_INTERRUPT_CLEAR>
+
+    <!-- SPI_IRQ_CONFIG -->
+    <Register_SPI_IRQ_CONFIG
+        reg_name        = "SPI_IRQ_CONFIG"
+        offset_addr     = "'h21"
+        reg_description = "SPI irq config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_IRQ_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi irq config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_IRQ_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi irq config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_IRQ_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi irq config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_IRQ_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi irq config flag field."/>
+    </Register_SPI_IRQ_CONFIG>
+
+    <!-- SPI_EVENT_STATUS -->
+    <Register_SPI_EVENT_STATUS
+        reg_name        = "SPI_EVENT_STATUS"
+        offset_addr     = "'h22"
+        reg_description = "SPI event status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_EVENT_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi event status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_EVENT_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi event status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_EVENT_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi event status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_EVENT_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi event status flag field."/>
+    </Register_SPI_EVENT_STATUS>
+
+    <!-- SPI_ERROR_STATUS -->
+    <Register_SPI_ERROR_STATUS
+        reg_name        = "SPI_ERROR_STATUS"
+        offset_addr     = "'h23"
+        reg_description = "SPI error status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi error status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi error status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi error status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi error status flag field."/>
+    </Register_SPI_ERROR_STATUS>
+
+    <!-- SPI_ERROR_CLEAR -->
+    <Register_SPI_ERROR_CLEAR
+        reg_name        = "SPI_ERROR_CLEAR"
+        offset_addr     = "'h24"
+        reg_description = "SPI error clear register.">
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_CLEAR_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi error clear control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_CLEAR_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi error clear config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_CLEAR_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi error clear value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_CLEAR_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi error clear flag field."/>
+    </Register_SPI_ERROR_CLEAR>
+
+    <!-- SPI_DEBUG -->
+    <Register_SPI_DEBUG
+        reg_name        = "SPI_DEBUG"
+        offset_addr     = "'h25"
+        reg_description = "SPI debug register.">
+        <Vector_Field
+            vector_field_name         = "SPI_DEBUG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi debug control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DEBUG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi debug config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DEBUG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi debug value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DEBUG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi debug flag field."/>
+    </Register_SPI_DEBUG>
+
+    <!-- SPI_DEBUG_CONTROL -->
+    <Register_SPI_DEBUG_CONTROL
+        reg_name        = "SPI_DEBUG_CONTROL"
+        offset_addr     = "'h26"
+        reg_description = "SPI debug control register.">
+        <Vector_Field
+            vector_field_name         = "SPI_DEBUG_CONTROL_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi debug control control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DEBUG_CONTROL_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi debug control config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DEBUG_CONTROL_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi debug control value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DEBUG_CONTROL_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi debug control flag field."/>
+    </Register_SPI_DEBUG_CONTROL>
+
+    <!-- SPI_LOOPBACK -->
+    <Register_SPI_LOOPBACK
+        reg_name        = "SPI_LOOPBACK"
+        offset_addr     = "'h27"
+        reg_description = "SPI loopback register.">
+        <Vector_Field
+            vector_field_name         = "SPI_LOOPBACK_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi loopback control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_LOOPBACK_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi loopback config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_LOOPBACK_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi loopback value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_LOOPBACK_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi loopback flag field."/>
+    </Register_SPI_LOOPBACK>
+
+    <!-- SPI_TEST_MODE -->
+    <Register_SPI_TEST_MODE
+        reg_name        = "SPI_TEST_MODE"
+        offset_addr     = "'h28"
+        reg_description = "SPI test mode register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_MODE_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi test mode control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_MODE_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi test mode config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_MODE_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi test mode value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_MODE_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi test mode flag field."/>
+    </Register_SPI_TEST_MODE>
+
+    <!-- SPI_TEST_CONTROL -->
+    <Register_SPI_TEST_CONTROL
+        reg_name        = "SPI_TEST_CONTROL"
+        offset_addr     = "'h29"
+        reg_description = "SPI test control register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_CONTROL_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi test control control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_CONTROL_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi test control config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_CONTROL_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi test control value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_CONTROL_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi test control flag field."/>
+    </Register_SPI_TEST_CONTROL>
+
+    <!-- SPI_TEST_STATUS -->
+    <Register_SPI_TEST_STATUS
+        reg_name        = "SPI_TEST_STATUS"
+        offset_addr     = "'h2A"
+        reg_description = "SPI test status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi test status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi test status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi test status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TEST_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi test status flag field."/>
+    </Register_SPI_TEST_STATUS>
+
+    <!-- SPI_PATTERN_CONFIG -->
+    <Register_SPI_PATTERN_CONFIG
+        reg_name        = "SPI_PATTERN_CONFIG"
+        offset_addr     = "'h2B"
+        reg_description = "SPI pattern config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_PATTERN_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi pattern config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PATTERN_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi pattern config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PATTERN_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi pattern config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PATTERN_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi pattern config flag field."/>
+    </Register_SPI_PATTERN_CONFIG>
+
+    <!-- SPI_PATTERN_STATUS -->
+    <Register_SPI_PATTERN_STATUS
+        reg_name        = "SPI_PATTERN_STATUS"
+        offset_addr     = "'h2C"
+        reg_description = "SPI pattern status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_PATTERN_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi pattern status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PATTERN_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi pattern status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PATTERN_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi pattern status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PATTERN_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi pattern status flag field."/>
+    </Register_SPI_PATTERN_STATUS>
+
+    <!-- SPI_SYNC_CONFIG -->
+    <Register_SPI_SYNC_CONFIG
+        reg_name        = "SPI_SYNC_CONFIG"
+        offset_addr     = "'h2D"
+        reg_description = "SPI sync config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SYNC_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi sync config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SYNC_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi sync config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SYNC_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi sync config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SYNC_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi sync config flag field."/>
+    </Register_SPI_SYNC_CONFIG>
+
+    <!-- SPI_SYNC_STATUS -->
+    <Register_SPI_SYNC_STATUS
+        reg_name        = "SPI_SYNC_STATUS"
+        offset_addr     = "'h2E"
+        reg_description = "SPI sync status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SYNC_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi sync status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SYNC_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi sync status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SYNC_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi sync status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SYNC_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi sync status flag field."/>
+    </Register_SPI_SYNC_STATUS>
+
+    <!-- SPI_FILTER_CONFIG -->
+    <Register_SPI_FILTER_CONFIG
+        reg_name        = "SPI_FILTER_CONFIG"
+        offset_addr     = "'h2F"
+        reg_description = "SPI filter config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_FILTER_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi filter config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FILTER_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi filter config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FILTER_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi filter config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FILTER_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi filter config flag field."/>
+    </Register_SPI_FILTER_CONFIG>
+
+    <!-- SPI_FILTER_STATUS -->
+    <Register_SPI_FILTER_STATUS
+        reg_name        = "SPI_FILTER_STATUS"
+        offset_addr     = "'h30"
+        reg_description = "SPI filter status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_FILTER_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi filter status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FILTER_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi filter status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FILTER_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi filter status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FILTER_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi filter status flag field."/>
+    </Register_SPI_FILTER_STATUS>
+
+    <!-- SPI_SAMPLE_CONFIG -->
+    <Register_SPI_SAMPLE_CONFIG
+        reg_name        = "SPI_SAMPLE_CONFIG"
+        offset_addr     = "'h31"
+        reg_description = "SPI sample config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SAMPLE_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi sample config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SAMPLE_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi sample config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SAMPLE_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi sample config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SAMPLE_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi sample config flag field."/>
+    </Register_SPI_SAMPLE_CONFIG>
+
+    <!-- SPI_SAMPLE_STATUS -->
+    <Register_SPI_SAMPLE_STATUS
+        reg_name        = "SPI_SAMPLE_STATUS"
+        offset_addr     = "'h32"
+        reg_description = "SPI sample status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SAMPLE_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi sample status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SAMPLE_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi sample status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SAMPLE_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi sample status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SAMPLE_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi sample status flag field."/>
+    </Register_SPI_SAMPLE_STATUS>
+
+    <!-- SPI_DRIVE_CONFIG -->
+    <Register_SPI_DRIVE_CONFIG
+        reg_name        = "SPI_DRIVE_CONFIG"
+        offset_addr     = "'h33"
+        reg_description = "SPI drive config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_DRIVE_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi drive config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DRIVE_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi drive config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DRIVE_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi drive config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DRIVE_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi drive config flag field."/>
+    </Register_SPI_DRIVE_CONFIG>
+
+    <!-- SPI_DRIVE_STATUS -->
+    <Register_SPI_DRIVE_STATUS
+        reg_name        = "SPI_DRIVE_STATUS"
+        offset_addr     = "'h34"
+        reg_description = "SPI drive status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_DRIVE_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi drive status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DRIVE_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi drive status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DRIVE_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi drive status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_DRIVE_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi drive status flag field."/>
+    </Register_SPI_DRIVE_STATUS>
+
+    <!-- SPI_POLARITY_CONFIG -->
+    <Register_SPI_POLARITY_CONFIG
+        reg_name        = "SPI_POLARITY_CONFIG"
+        offset_addr     = "'h35"
+        reg_description = "SPI polarity config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_POLARITY_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi polarity config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POLARITY_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi polarity config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POLARITY_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi polarity config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POLARITY_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi polarity config flag field."/>
+    </Register_SPI_POLARITY_CONFIG>
+
+    <!-- SPI_PHASE_CONFIG -->
+    <Register_SPI_PHASE_CONFIG
+        reg_name        = "SPI_PHASE_CONFIG"
+        offset_addr     = "'h36"
+        reg_description = "SPI phase config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_PHASE_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi phase config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PHASE_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi phase config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PHASE_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi phase config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PHASE_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi phase config flag field."/>
+    </Register_SPI_PHASE_CONFIG>
+
+    <!-- SPI_EDGE_CONFIG -->
+    <Register_SPI_EDGE_CONFIG
+        reg_name        = "SPI_EDGE_CONFIG"
+        offset_addr     = "'h37"
+        reg_description = "SPI edge config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_EDGE_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi edge config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_EDGE_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi edge config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_EDGE_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi edge config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_EDGE_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi edge config flag field."/>
+    </Register_SPI_EDGE_CONFIG>
+
+    <!-- SPI_CLOCK_GATE -->
+    <Register_SPI_CLOCK_GATE
+        reg_name        = "SPI_CLOCK_GATE"
+        offset_addr     = "'h38"
+        reg_description = "SPI clock gate register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CLOCK_GATE_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi clock gate control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CLOCK_GATE_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi clock gate config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CLOCK_GATE_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi clock gate value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CLOCK_GATE_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi clock gate flag field."/>
+    </Register_SPI_CLOCK_GATE>
+
+    <!-- SPI_POWER_CONTROL -->
+    <Register_SPI_POWER_CONTROL
+        reg_name        = "SPI_POWER_CONTROL"
+        offset_addr     = "'h39"
+        reg_description = "SPI power control register.">
+        <Vector_Field
+            vector_field_name         = "SPI_POWER_CONTROL_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi power control control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POWER_CONTROL_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi power control config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POWER_CONTROL_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi power control value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POWER_CONTROL_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi power control flag field."/>
+    </Register_SPI_POWER_CONTROL>
+
+    <!-- SPI_POWER_STATUS -->
+    <Register_SPI_POWER_STATUS
+        reg_name        = "SPI_POWER_STATUS"
+        offset_addr     = "'h3A"
+        reg_description = "SPI power status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_POWER_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi power status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POWER_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi power status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POWER_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi power status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_POWER_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi power status flag field."/>
+    </Register_SPI_POWER_STATUS>
+
+    <!-- SPI_RESET_CONTROL -->
+    <Register_SPI_RESET_CONTROL
+        reg_name        = "SPI_RESET_CONTROL"
+        offset_addr     = "'h3B"
+        reg_description = "SPI reset control register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RESET_CONTROL_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi reset control control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESET_CONTROL_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi reset control config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESET_CONTROL_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi reset control value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESET_CONTROL_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi reset control flag field."/>
+    </Register_SPI_RESET_CONTROL>
+
+    <!-- SPI_RESET_STATUS -->
+    <Register_SPI_RESET_STATUS
+        reg_name        = "SPI_RESET_STATUS"
+        offset_addr     = "'h3C"
+        reg_description = "SPI reset status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RESET_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi reset status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESET_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi reset status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESET_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi reset status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RESET_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi reset status flag field."/>
+    </Register_SPI_RESET_STATUS>
+
+    <!-- SPI_SLEEP_CONFIG -->
+    <Register_SPI_SLEEP_CONFIG
+        reg_name        = "SPI_SLEEP_CONFIG"
+        offset_addr     = "'h3D"
+        reg_description = "SPI sleep config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SLEEP_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi sleep config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLEEP_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi sleep config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLEEP_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi sleep config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLEEP_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi sleep config flag field."/>
+    </Register_SPI_SLEEP_CONFIG>
+
+    <!-- SPI_WAKE_STATUS -->
+    <Register_SPI_WAKE_STATUS
+        reg_name        = "SPI_WAKE_STATUS"
+        offset_addr     = "'h3E"
+        reg_description = "SPI wake status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_WAKE_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi wake status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAKE_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi wake status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAKE_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi wake status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAKE_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi wake status flag field."/>
+    </Register_SPI_WAKE_STATUS>
+
+    <!-- SPI_WAIT_CONFIG -->
+    <Register_SPI_WAIT_CONFIG
+        reg_name        = "SPI_WAIT_CONFIG"
+        offset_addr     = "'h3F"
+        reg_description = "SPI wait config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_WAIT_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi wait config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAIT_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi wait config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAIT_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi wait config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAIT_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi wait config flag field."/>
+    </Register_SPI_WAIT_CONFIG>
+
+    <!-- SPI_WAIT_STATUS -->
+    <Register_SPI_WAIT_STATUS
+        reg_name        = "SPI_WAIT_STATUS"
+        offset_addr     = "'h40"
+        reg_description = "SPI wait status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_WAIT_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi wait status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAIT_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi wait status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAIT_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi wait status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_WAIT_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi wait status flag field."/>
+    </Register_SPI_WAIT_STATUS>
+
+    <!-- SPI_FRAME_COUNT -->
+    <Register_SPI_FRAME_COUNT
+        reg_name        = "SPI_FRAME_COUNT"
+        offset_addr     = "'h41"
+        reg_description = "SPI frame count register.">
+        <Vector_Field
+            vector_field_name         = "SPI_FRAME_COUNT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi frame count control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FRAME_COUNT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi frame count config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FRAME_COUNT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi frame count value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_FRAME_COUNT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi frame count flag field."/>
+    </Register_SPI_FRAME_COUNT>
+
+    <!-- SPI_BYTE_COUNT -->
+    <Register_SPI_BYTE_COUNT
+        reg_name        = "SPI_BYTE_COUNT"
+        offset_addr     = "'h42"
+        reg_description = "SPI byte count register.">
+        <Vector_Field
+            vector_field_name         = "SPI_BYTE_COUNT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi byte count control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BYTE_COUNT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi byte count config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BYTE_COUNT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi byte count value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BYTE_COUNT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi byte count flag field."/>
+    </Register_SPI_BYTE_COUNT>
+
+    <!-- SPI_BIT_COUNT -->
+    <Register_SPI_BIT_COUNT
+        reg_name        = "SPI_BIT_COUNT"
+        offset_addr     = "'h43"
+        reg_description = "SPI bit count register.">
+        <Vector_Field
+            vector_field_name         = "SPI_BIT_COUNT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi bit count control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BIT_COUNT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi bit count config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BIT_COUNT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi bit count value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BIT_COUNT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi bit count flag field."/>
+    </Register_SPI_BIT_COUNT>
+
+    <!-- SPI_TRANSFER_COUNT -->
+    <Register_SPI_TRANSFER_COUNT
+        reg_name        = "SPI_TRANSFER_COUNT"
+        offset_addr     = "'h44"
+        reg_description = "SPI transfer count register.">
+        <Vector_Field
+            vector_field_name         = "SPI_TRANSFER_COUNT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi transfer count control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TRANSFER_COUNT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi transfer count config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TRANSFER_COUNT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi transfer count value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_TRANSFER_COUNT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi transfer count flag field."/>
+    </Register_SPI_TRANSFER_COUNT>
+
+    <!-- SPI_ERROR_COUNT -->
+    <Register_SPI_ERROR_COUNT
+        reg_name        = "SPI_ERROR_COUNT"
+        offset_addr     = "'h45"
+        reg_description = "SPI error count register.">
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_COUNT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi error count control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_COUNT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi error count config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_COUNT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi error count value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ERROR_COUNT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi error count flag field."/>
+    </Register_SPI_ERROR_COUNT>
+
+    <!-- SPI_RETRY_CONFIG -->
+    <Register_SPI_RETRY_CONFIG
+        reg_name        = "SPI_RETRY_CONFIG"
+        offset_addr     = "'h46"
+        reg_description = "SPI retry config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi retry config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi retry config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi retry config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi retry config flag field."/>
+    </Register_SPI_RETRY_CONFIG>
+
+    <!-- SPI_RETRY_STATUS -->
+    <Register_SPI_RETRY_STATUS
+        reg_name        = "SPI_RETRY_STATUS"
+        offset_addr     = "'h47"
+        reg_description = "SPI retry status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi retry status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi retry status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi retry status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi retry status flag field."/>
+    </Register_SPI_RETRY_STATUS>
+
+    <!-- SPI_RETRY_COUNT -->
+    <Register_SPI_RETRY_COUNT
+        reg_name        = "SPI_RETRY_COUNT"
+        offset_addr     = "'h48"
+        reg_description = "SPI retry count register.">
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_COUNT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi retry count control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_COUNT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi retry count config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_COUNT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi retry count value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_RETRY_COUNT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi retry count flag field."/>
+    </Register_SPI_RETRY_COUNT>
+
+    <!-- SPI_PACKET_CONFIG -->
+    <Register_SPI_PACKET_CONFIG
+        reg_name        = "SPI_PACKET_CONFIG"
+        offset_addr     = "'h49"
+        reg_description = "SPI packet config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_PACKET_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi packet config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PACKET_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi packet config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PACKET_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi packet config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PACKET_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi packet config flag field."/>
+    </Register_SPI_PACKET_CONFIG>
+
+    <!-- SPI_PACKET_STATUS -->
+    <Register_SPI_PACKET_STATUS
+        reg_name        = "SPI_PACKET_STATUS"
+        offset_addr     = "'h4A"
+        reg_description = "SPI packet status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_PACKET_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi packet status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PACKET_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi packet status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PACKET_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi packet status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_PACKET_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi packet status flag field."/>
+    </Register_SPI_PACKET_STATUS>
+
+    <!-- SPI_HEADER_CONFIG -->
+    <Register_SPI_HEADER_CONFIG
+        reg_name        = "SPI_HEADER_CONFIG"
+        offset_addr     = "'h4B"
+        reg_description = "SPI header config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_HEADER_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi header config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_HEADER_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi header config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_HEADER_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi header config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_HEADER_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi header config flag field."/>
+    </Register_SPI_HEADER_CONFIG>
+
+    <!-- SPI_HEADER_STATUS -->
+    <Register_SPI_HEADER_STATUS
+        reg_name        = "SPI_HEADER_STATUS"
+        offset_addr     = "'h4C"
+        reg_description = "SPI header status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_HEADER_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi header status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_HEADER_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi header status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_HEADER_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi header status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_HEADER_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi header status flag field."/>
+    </Register_SPI_HEADER_STATUS>
+
+    <!-- SPI_CRC_CONFIG -->
+    <Register_SPI_CRC_CONFIG
+        reg_name        = "SPI_CRC_CONFIG"
+        offset_addr     = "'h4D"
+        reg_description = "SPI crc config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi crc config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi crc config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi crc config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi crc config flag field."/>
+    </Register_SPI_CRC_CONFIG>
+
+    <!-- SPI_CRC_STATUS -->
+    <Register_SPI_CRC_STATUS
+        reg_name        = "SPI_CRC_STATUS"
+        offset_addr     = "'h4E"
+        reg_description = "SPI crc status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi crc status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi crc status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi crc status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi crc status flag field."/>
+    </Register_SPI_CRC_STATUS>
+
+    <!-- SPI_CRC_RESULT -->
+    <Register_SPI_CRC_RESULT
+        reg_name        = "SPI_CRC_RESULT"
+        offset_addr     = "'h4F"
+        reg_description = "SPI crc result register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_RESULT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi crc result control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_RESULT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi crc result config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_RESULT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi crc result value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CRC_RESULT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi crc result flag field."/>
+    </Register_SPI_CRC_RESULT>
+
+    <!-- SPI_CHECKSUM_CONFIG -->
+    <Register_SPI_CHECKSUM_CONFIG
+        reg_name        = "SPI_CHECKSUM_CONFIG"
+        offset_addr     = "'h50"
+        reg_description = "SPI checksum config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi checksum config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi checksum config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi checksum config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi checksum config flag field."/>
+    </Register_SPI_CHECKSUM_CONFIG>
+
+    <!-- SPI_CHECKSUM_STATUS -->
+    <Register_SPI_CHECKSUM_STATUS
+        reg_name        = "SPI_CHECKSUM_STATUS"
+        offset_addr     = "'h51"
+        reg_description = "SPI checksum status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi checksum status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi checksum status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi checksum status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi checksum status flag field."/>
+    </Register_SPI_CHECKSUM_STATUS>
+
+    <!-- SPI_CHECKSUM_RESULT -->
+    <Register_SPI_CHECKSUM_RESULT
+        reg_name        = "SPI_CHECKSUM_RESULT"
+        offset_addr     = "'h52"
+        reg_description = "SPI checksum result register.">
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_RESULT_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi checksum result control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_RESULT_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi checksum result config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_RESULT_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi checksum result value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_CHECKSUM_RESULT_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi checksum result flag field."/>
+    </Register_SPI_CHECKSUM_RESULT>
+
+    <!-- SPI_SEQUENCE_CONFIG -->
+    <Register_SPI_SEQUENCE_CONFIG
+        reg_name        = "SPI_SEQUENCE_CONFIG"
+        offset_addr     = "'h53"
+        reg_description = "SPI sequence config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SEQUENCE_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi sequence config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SEQUENCE_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi sequence config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SEQUENCE_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi sequence config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SEQUENCE_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi sequence config flag field."/>
+    </Register_SPI_SEQUENCE_CONFIG>
+
+    <!-- SPI_SEQUENCE_STATUS -->
+    <Register_SPI_SEQUENCE_STATUS
+        reg_name        = "SPI_SEQUENCE_STATUS"
+        offset_addr     = "'h54"
+        reg_description = "SPI sequence status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SEQUENCE_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi sequence status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SEQUENCE_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi sequence status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SEQUENCE_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi sequence status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SEQUENCE_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi sequence status flag field."/>
+    </Register_SPI_SEQUENCE_STATUS>
+
+    <!-- SPI_BUFFER_CONFIG -->
+    <Register_SPI_BUFFER_CONFIG
+        reg_name        = "SPI_BUFFER_CONFIG"
+        offset_addr     = "'h55"
+        reg_description = "SPI buffer config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_BUFFER_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi buffer config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUFFER_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi buffer config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUFFER_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi buffer config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUFFER_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi buffer config flag field."/>
+    </Register_SPI_BUFFER_CONFIG>
+
+    <!-- SPI_BUFFER_STATUS -->
+    <Register_SPI_BUFFER_STATUS
+        reg_name        = "SPI_BUFFER_STATUS"
+        offset_addr     = "'h56"
+        reg_description = "SPI buffer status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_BUFFER_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi buffer status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUFFER_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi buffer status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUFFER_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi buffer status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUFFER_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi buffer status flag field."/>
+    </Register_SPI_BUFFER_STATUS>
+
+    <!-- SPI_QUEUE_CONTROL -->
+    <Register_SPI_QUEUE_CONTROL
+        reg_name        = "SPI_QUEUE_CONTROL"
+        offset_addr     = "'h57"
+        reg_description = "SPI queue control register.">
+        <Vector_Field
+            vector_field_name         = "SPI_QUEUE_CONTROL_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi queue control control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_QUEUE_CONTROL_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi queue control config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_QUEUE_CONTROL_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi queue control value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_QUEUE_CONTROL_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi queue control flag field."/>
+    </Register_SPI_QUEUE_CONTROL>
+
+    <!-- SPI_QUEUE_STATUS -->
+    <Register_SPI_QUEUE_STATUS
+        reg_name        = "SPI_QUEUE_STATUS"
+        offset_addr     = "'h58"
+        reg_description = "SPI queue status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_QUEUE_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi queue status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_QUEUE_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi queue status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_QUEUE_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi queue status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_QUEUE_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi queue status flag field."/>
+    </Register_SPI_QUEUE_STATUS>
+
+    <!-- SPI_ARBITRATION -->
+    <Register_SPI_ARBITRATION
+        reg_name        = "SPI_ARBITRATION"
+        offset_addr     = "'h59"
+        reg_description = "SPI arbitration register.">
+        <Vector_Field
+            vector_field_name         = "SPI_ARBITRATION_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi arbitration control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ARBITRATION_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi arbitration config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ARBITRATION_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi arbitration value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ARBITRATION_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi arbitration flag field."/>
+    </Register_SPI_ARBITRATION>
+
+    <!-- SPI_ARBITRATION_STATUS -->
+    <Register_SPI_ARBITRATION_STATUS
+        reg_name        = "SPI_ARBITRATION_STATUS"
+        offset_addr     = "'h5A"
+        reg_description = "SPI arbitration status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_ARBITRATION_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi arbitration status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ARBITRATION_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi arbitration status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ARBITRATION_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi arbitration status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_ARBITRATION_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi arbitration status flag field."/>
+    </Register_SPI_ARBITRATION_STATUS>
+
+    <!-- SPI_SLAVE_CONFIG -->
+    <Register_SPI_SLAVE_CONFIG
+        reg_name        = "SPI_SLAVE_CONFIG"
+        offset_addr     = "'h5B"
+        reg_description = "SPI slave config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SLAVE_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi slave config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLAVE_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi slave config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLAVE_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi slave config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLAVE_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi slave config flag field."/>
+    </Register_SPI_SLAVE_CONFIG>
+
+    <!-- SPI_SLAVE_STATUS -->
+    <Register_SPI_SLAVE_STATUS
+        reg_name        = "SPI_SLAVE_STATUS"
+        offset_addr     = "'h5C"
+        reg_description = "SPI slave status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_SLAVE_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi slave status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLAVE_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi slave status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLAVE_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1100"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi slave status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_SLAVE_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "100"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi slave status flag field."/>
+    </Register_SPI_SLAVE_STATUS>
+
+    <!-- SPI_MASTER_CONFIG -->
+    <Register_SPI_MASTER_CONFIG
+        reg_name        = "SPI_MASTER_CONFIG"
+        offset_addr     = "'h5D"
+        reg_description = "SPI master config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_MASTER_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi master config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MASTER_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi master config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MASTER_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1001"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi master config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MASTER_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi master config flag field."/>
+    </Register_SPI_MASTER_CONFIG>
+
+    <!-- SPI_MASTER_STATUS -->
+    <Register_SPI_MASTER_STATUS
+        reg_name        = "SPI_MASTER_STATUS"
+        offset_addr     = "'h5E"
+        reg_description = "SPI master status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_MASTER_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi master status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MASTER_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi master status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MASTER_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "110"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi master status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_MASTER_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1110"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi master status flag field."/>
+    </Register_SPI_MASTER_STATUS>
+
+    <!-- SPI_BUS_CONFIG -->
+    <Register_SPI_BUS_CONFIG
+        reg_name        = "SPI_BUS_CONFIG"
+        offset_addr     = "'h5F"
+        reg_description = "SPI bus config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_BUS_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi bus config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUS_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi bus config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUS_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "011"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi bus config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUS_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1011"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi bus config flag field."/>
+    </Register_SPI_BUS_CONFIG>
+
+    <!-- SPI_BUS_STATUS -->
+    <Register_SPI_BUS_STATUS
+        reg_name        = "SPI_BUS_STATUS"
+        offset_addr     = "'h60"
+        reg_description = "SPI bus status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_BUS_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi bus status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUS_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi bus status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUS_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi bus status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_BUS_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1000"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi bus status flag field."/>
+    </Register_SPI_BUS_STATUS>
+
+    <!-- SPI_INTERFACE_CONFIG -->
+    <Register_SPI_INTERFACE_CONFIG
+        reg_name        = "SPI_INTERFACE_CONFIG"
+        offset_addr     = "'h61"
+        reg_description = "SPI interface config register.">
+        <Vector_Field
+            vector_field_name         = "SPI_INTERFACE_CONFIG_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi interface config control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERFACE_CONFIG_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi interface config config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERFACE_CONFIG_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1101"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi interface config value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERFACE_CONFIG_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "101"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi interface config flag field."/>
+    </Register_SPI_INTERFACE_CONFIG>
+
+    <!-- SPI_INTERFACE_STATUS -->
+    <Register_SPI_INTERFACE_STATUS
+        reg_name        = "SPI_INTERFACE_STATUS"
+        offset_addr     = "'h62"
+        reg_description = "SPI interface status register.">
+        <Vector_Field
+            vector_field_name         = "SPI_INTERFACE_STATUS_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi interface status control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERFACE_STATUS_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi interface status config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERFACE_STATUS_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1010"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi interface status value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_INTERFACE_STATUS_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "010"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi interface status flag field."/>
+    </Register_SPI_INTERFACE_STATUS>
+
+    <!-- SPI_VERSION -->
+    <Register_SPI_VERSION
+        reg_name        = "SPI_VERSION"
+        offset_addr     = "'h63"
+        reg_description = "SPI version register.">
+        <Vector_Field
+            vector_field_name         = "SPI_VERSION_CONTROL"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "7"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI spi version control field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_VERSION_CONFIG"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "15"
+            vector_field_position_lsb = "8"
+            vector_field_description  = "SPI spi version config field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_VERSION_VALUE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "111"
+            vector_field_position_msb = "23"
+            vector_field_position_lsb = "16"
+            vector_field_description  = "SPI spi version value field."/>
+        <Vector_Field
+            vector_field_name         = "SPI_VERSION_FLAG"
+            vector_field_access_type  = "ro"
+            vector_field_reset        = "1111"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "24"
+            vector_field_description  = "SPI spi version flag field."/>
+    </Register_SPI_VERSION>
+
+</Register_Map>
+
