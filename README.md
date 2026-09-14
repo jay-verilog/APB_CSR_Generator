@@ -73,349 +73,236 @@ Register Map
 The following example shows a SPI IP block containing different types of registers and fields.
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-
 <Register_Map>
 
-    <!-- IP Block Information -->
+    <block_name
+        block_name = "spi">
+    </block_name>
 
-    <block_name block_name="spi"></block_name>
+    <data_width
+        data_width = "32">
+    </data_width>
 
-    <data_width data_width="32"></data_width>
+    <address_width
+        addr_width = "32">
+    </address_width>
 
-    <address_width addr_width="32"></address_width>
+    <base_address
+        base_addr = "'h3500_0000">
+    </base_address>
 
-    <base_address base_addr="'h3500_0000"></base_address>
+    <register_width
+        reg_width = "32">
+    </register_width>
 
-    <register_width reg_width="32"></register_width>
 
-
-    <!-- CONTROL REGISTER 1 -->
-
-    <Register_SPI_CONTROL_REGISTER1
-        reg_name="CONTROL_REGISTER1"
-        offset_addr="'h0"
-        reg_description="SPI Control Register 1">
-
-        <!-- Reserved vector field: bits 31:8 -->
-
-        <Field
-            field_name="RESERVED"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="31:8"
-            field_description="Reserved for future expansion."/>
-
-        <!-- Single-bit field: bit 7 -->
+    <!-- SPI Control Register 1 -->
+    <Register_SPI_CONTROL_REGISTER
+        reg_name        = "CONTROL_REGISTER1"
+        offset_addr     = "'h0"
+        reg_description = "SPI control register used to configure SPI operation, interrupt generation, master mode, clock polarity, clock phase, slave select output, and bit transmission order.">
 
         <Field
-            field_name="SPIE"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="7"
-            field_description="SPI interrupt enable."/>
-
-        <!-- Single-bit field: bit 6 -->
+            field_name        = "SPIE"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "7"
+            field_description = "SPI interrupt enable. Enables SPI interrupt generation when set to 1."/>
 
         <Field
-            field_name="SPE"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="6"
-            field_description="SPI enable."/>
-
-        <!-- Single-bit field: bit 5 -->
+            field_name        = "SPE"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "6"
+            field_description = "SPI enable. Enables the SPI module when set to 1."/>
 
         <Field
-            field_name="SPTIE"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="5"
-            field_description="SPI transmit interrupt enable."/>
-
-        <!-- Single-bit field: bit 4 -->
+            field_name        = "SPTIE"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "5"
+            field_description = "SPI transmit interrupt enable. Enables an interrupt when the SPI transmit buffer is empty."/>
 
         <Field
-            field_name="MSTR"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="4"
-            field_description="Master mode select."/>
-
-        <!-- Single-bit field: bit 3 -->
+            field_name        = "MSTR"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "4"
+            field_description = "Master mode select. Selects the SPI module as master when set to 1 and slave when set to 0."/>
 
         <Field
-            field_name="CPOL"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="3"
-            field_description="Clock polarity."/>
-
-        <!-- Single-bit field: bit 2 -->
+            field_name        = "CPOL"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "3"
+            field_description = "Clock polarity. Determines the idle level of the SPI clock."/>
 
         <Field
-            field_name="CPHA"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="2"
-            field_description="Clock phase."/>
-
-        <!-- Single-bit field: bit 1 -->
+            field_name        = "CPHA"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "2"
+            field_description = "Clock phase. Selects the SPI clock edge used for data sampling and shifting."/>
 
         <Field
-            field_name="SSOE"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="1"
-            field_description="Slave select output enable."/>
-
-        <!-- Single-bit field: bit 0 -->
+            field_name        = "SSOE"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "1"
+            field_description = "Slave select output enable. Controls automatic slave select output behavior in master mode."/>
 
         <Field
-            field_name="LSBFE"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="0"
-            field_description="LSB first enable."/>
+            field_name        = "LSBFE"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "0"
+            field_description = "LSB first enable. Transmits and receives the least significant bit first when set to 1."/>
 
-    </Register_SPI_CONTROL_REGISTER1>
+    </Register_SPI_CONTROL_REGISTER>
 
 
-    <!-- CONTROL REGISTER 2 -->
-
+    <!-- SPI Control Register 2 -->
     <Register_SPI_CONTROL_REGISTER2
-        reg_name="CONTROL_REGISTER2"
-        offset_addr="'h1"
-        reg_description="SPI Control Register 2">
+        reg_name        = "CONTROL_REGISTER2"
+        offset_addr     = "'h1"
+        reg_description = "SPI control register used to configure additional SPI operating modes and serial clock prescaling.">
 
-        <!-- Vector field: bits 6:4 -->
-
-        <Field
-            field_name="SAMPLE"
-            field_access_type="wr"
-            field_reset_value="1"
-            field_position="6:4"
-            field_description="SPI sampling configuration."/>
-
-        <!-- Single-bit field -->
+        <Vector_Field
+            vector_field_name         = "SAMPLE"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "001"
+            vector_field_position_msb = "6"
+            vector_field_position_lsb = "4"
+            vector_field_description  = "Serial pre-prescaler control. Selects the input clock division factor before the serial prescaler."/>
 
         <Field
-            field_name="MODFEN"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="3"
-            field_description="Mode fault enable."/>
-
-        <!-- Single-bit field -->
+            field_name        = "MODFEN"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "3"
+            field_description = "Mode fault enable. Enables mode fault detection in SPI master mode."/>
 
         <Field
-            field_name="BIDIROE"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="2"
-            field_description="Bidirectional output enable."/>
-
-        <!-- Single-bit field -->
+            field_name        = "BIDIROE"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "2"
+            field_description = "Bidirectional output enable. Enables the SPI data output in bidirectional mode."/>
 
         <Field
-            field_name="SPISWAI"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="1"
-            field_description="SPI stop in wait mode."/>
-
-        <!-- Single-bit field -->
+            field_name        = "SPISWAI"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "1"
+            field_description = "SPI stop in wait mode. Controls SPI operation when the system enters wait mode."/>
 
         <Field
-            field_name="SPC0"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="0"
-            field_description="SPI configuration bit."/>
-
-        <!-- Reserved vector -->
-
-        <Field
-            field_name="RESERVED"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="31:7"
-            field_description="Reserved for future expansion."/>
+            field_name        = "SPC0"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "0"
+            field_description = "Serial pin control. Controls the SPI serial pin configuration."/>
 
     </Register_SPI_CONTROL_REGISTER2>
 
 
-    <!-- BAUD RATE REGISTER -->
-
+    <!-- SPI Baud Rate Register -->
     <Register_SPI_BAUD_RATE_REGISTER
-        reg_name="BAUD_RATE_REGISTER"
-        offset_addr="'h2"
-        reg_description="SPI Baud Rate Register">
+        reg_name        = "BAUD_RATE_REGISTER"
+        offset_addr     = "'h2"
+        reg_description = "SPI baud rate register used to configure the serial clock frequency.">
 
-        <!-- Reserved vector -->
+        <Vector_Field
+            vector_field_name         = "SPPR"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "6"
+            vector_field_position_lsb = "4"
+            vector_field_description  = "Serial pre-prescaler control. Selects the division factor of the SPI input clock before the serial prescaler."/>
 
-        <Field
-            field_name="RESERVED1"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="31:7"
-            field_description="Reserved for future expansion."/>
-
-        <!-- Vector field: bits 6:4 -->
-
-        <Field
-            field_name="SPPR"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="6:4"
-            field_description="SPI baud rate prescaler."/>
-
-        <!-- Reserved single bit -->
-
-        <Field
-            field_name="RESERVED2"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="3"
-            field_description="Reserved for future expansion."/>
-
-        <!-- Vector field: bits 2:0 -->
-
-        <Field
-            field_name="SPR"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="2:0"
-            field_description="SPI baud rate selection."/>
+        <Vector_Field
+            vector_field_name         = "SPR"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "2"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "Serial prescaler control. Selects the SPI serial clock prescaler value. \n 00 - no change \n 01 - reset \n 10 - set \n 11 - toggle"/>
 
     </Register_SPI_BAUD_RATE_REGISTER>
 
 
-    <!-- STATUS REGISTER -->
-
+    <!-- SPI Status Register -->
     <Register_SPI_STATUS_REGISTER
-        reg_name="STATUS_REGISTER"
-        offset_addr="'h3"
-        reg_description="SPI Status Register">
-
-        <!-- Reserved vector -->
+        reg_name        = "STATUS_REGISTER"
+        offset_addr     = "'h3"
+        reg_description = "SPI status register containing flags that indicate transfer completion, transmit buffer status, and mode fault conditions.">
 
         <Field
-            field_name="RESERVED1"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="31:8"
-            field_description="Reserved for future expansion."/>
-
-        <!-- Read-only single-bit field -->
+            field_name        = "SPIF"
+            field_access_type = "ro"
+            field_reset_value = "0"
+            field_position    = "7"
+            field_description = "SPI interrupt flag. Indicates that an SPI transfer has completed."/>
 
         <Field
-            field_name="SPIF"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="7"
-            field_description="SPI transfer complete flag."/>
-
-        <!-- Reserved single bit -->
+            field_name        = "SPTEF"
+            field_access_type = "ro"
+            field_reset_value = "0"
+            field_position    = "5"
+            field_description = "SPI transmit buffer empty flag. Indicates that the SPI transmit buffer is empty and ready for new data."/>
 
         <Field
-            field_name="RESERVED2"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="6"
-            field_description="Reserved for future expansion."/>
-
-        <!-- Read-only single-bit field -->
-
-        <Field
-            field_name="SPTEF"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="5"
-            field_description="SPI transmit buffer empty flag."/>
-
-        <!-- Read-only single-bit field -->
-
-        <Field
-            field_name="MODF"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="4"
-            field_description="Mode fault flag."/>
-
-        <!-- Reserved vector -->
-
-        <Field
-            field_name="RESERVED3"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="3:0"
-            field_description="Reserved for future expansion."/>
+            field_name        = "MODF"
+            field_access_type = "ro"
+            field_reset_value = "0"
+            field_position    = "4"
+            field_description = "Mode fault flag. Indicates that a mode fault condition has occurred during SPI operation."/>
 
     </Register_SPI_STATUS_REGISTER>
 
 
-    <!-- DATA REGISTER -->
-
+    <!-- SPI Data Register -->
     <Register_SPI_DATA_REGISTER
-        reg_name="DATA_REGISTER"
-        offset_addr="'h4"
-        reg_description="SPI Data Register">
+        reg_name        = "DATA_REGISTER"
+        offset_addr     = "'h4"
+        reg_description = "SPI data register used to store data for transmission and received data.">
 
-        <!-- Complete 32-bit vector -->
-
-        <Field
-            field_name="DATA"
-            field_access_type="wr"
-            field_reset_value="0"
-            field_position="31:0"
-            field_description="SPI data."/>
+        <Vector_Field
+            vector_field_name         = "DATA"
+            vector_field_access_type  = "wr"
+            vector_field_reset_value  = "32'h0"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI data field. Contains the data to be transmitted or the data received through the SPI interface."/>
 
     </Register_SPI_DATA_REGISTER>
 
-
-    <!-- COMMAND REGISTER -->
-
+    <!-- SPI Command Register -->
     <Register_SPI_COMMAND_REGISTER
-        reg_name="COMMAND_REGISTER"
-        offset_addr="'h5"
-        reg_description="SPI Command Register">
-
-        <!-- Reserved vector -->
+        reg_name        = "COMMAND_REGISTER"
+        offset_addr     = "'h5"
+        reg_description = "SPI command register used to issue control commands to the SPI module. This register is write-only.">
 
         <Field
-            field_name="RESERVED"
-            field_access_type="ro"
-            field_reset_value="0"
-            field_position="31:3"
-            field_description="Reserved for future expansion."/>
-
-        <!-- Write-only single-bit field -->
+            field_name        = "START"
+            field_access_type = "wo"
+            field_reset_value = "0"
+            field_position    = "2"
+            field_description = "Start command. Writing 1 starts an SPI transfer."/>
 
         <Field
-            field_name="START"
-            field_access_type="wo"
-            field_reset_value="0"
-            field_position="2"
-            field_description="Start SPI operation."/>
-
-        <!-- Write-only single-bit field -->
+            field_name        = "CLEAR"
+            field_access_type = "wo"
+            field_reset_value = "0"
+            field_position    = "1"
+            field_description = "Clear command. Writing 1 clears the SPI status and control state."/>
 
         <Field
-            field_name="CLEAR"
-            field_access_type="wo"
-            field_reset_value="0"
-            field_position="1"
-            field_description="Clear SPI status."/>
-
-        <!-- Write-only single-bit field -->
-
-        <Field
-            field_name="ABORT"
-            field_access_type="wo"
-            field_reset_value="0"
-            field_position="0"
-            field_description="Abort SPI operation."/>
+            field_name        = "ABORT"
+            field_access_type = "wo"
+            field_reset_value = "0"
+            field_position    = "0"
+            field_description = "Abort command. Writing 1 aborts the current SPI transfer."/>
 
     </Register_SPI_COMMAND_REGISTER>
 
@@ -431,98 +318,40 @@ The following example shows a SPI IP block containing different types of registe
 Use a single number for `field_position`.
 
 ```xml
-<Field
-    field_name="SPIE"
-    field_access_type="wr"
-    field_reset_value="0"
-    field_position="7"
-    field_description="SPI interrupt enable."/>
+        <Field
+            field_name        = "SPIE"
+            field_access_type = "wr"
+            field_reset_value = "0"
+            field_position    = "7"
+            field_description = "SPI interrupt enable. Enables SPI interrupt generation when set to 1."/>
 ```
-
-This creates:
-
-```text
-Bit 7
-  |
-  ↓
-+---+
-|SPIE|
-+---+
-```
-
----
 
 ## 2. Vector / Multi-Bit Field
 
 Use `MSB:LSB` for a vector.
 
 ```xml
-<Field
-    field_name="SAMPLE"
-    field_access_type="wr"
-    field_reset_value="1"
-    field_position="6:4"
-    field_description="SPI sampling configuration."/>
+        <Vector_Field
+            vector_field_name         = "SPPR"
+            vector_field_access_type  = "wr"
+            vector_field_reset        = "000"
+            vector_field_position_msb = "6"
+            vector_field_position_lsb = "4"
+            vector_field_description  = "Serial pre-prescaler control. Selects the division factor of the SPI input clock before the serial prescaler."/>
 ```
-
-This creates:
-
-```text
-Bits
-  6       5       4
-+-------+-------+-------+
-|       SAMPLE          |
-+-------+-------+-------+
-```
-
-In SystemVerilog, this corresponds to:
-
-```systemverilog
-logic [6:4] SAMPLE;
-```
-
----
 
 ## 3. Full 32-Bit Vector
 
 ```xml
-<Field
-    field_name="DATA"
-    field_access_type="wr"
-    field_reset_value="0"
-    field_position="31:0"
-    field_description="SPI data."/>
+        <Vector_Field
+            vector_field_name         = "DATA"
+            vector_field_access_type  = "wr"
+            vector_field_reset_value  = "32'h0"
+            vector_field_position_msb = "31"
+            vector_field_position_lsb = "0"
+            vector_field_description  = "SPI data field. Contains the data to be transmitted or the data received through the SPI interface."/>
 ```
-
-This corresponds to:
-
-```systemverilog
-logic [31:0] DATA;
-```
-
----
-
-## 4. Reserved Vector
-
-Reserved bits can also be represented as a vector:
-
-```xml
-<Field
-    field_name="RESERVED"
-    field_access_type="ro"
-    field_reset_value="0"
-    field_position="31:8"
-    field_description="Reserved for future expansion."/>
-```
-
-This represents:
-
-```text
-31                         8 7       0
-+---------------------------+---------+
-|         RESERVED          |   DATA  |
-+---------------------------+---------+
-```
+## 4. Reserved field  - Do not define the field
 
 ---
 
@@ -683,7 +512,8 @@ APB_CSR_Generator/
    Register Map           RTL
         │                    │
         ▼                    ▼
-   spi_doc.html          rtl/
+   spi_doc.html          rtl/define.v
+                         rtl/csr.v
 ```
 
 The XML therefore acts as the **single register-map specification** containing the block information, registers, fields, vector fields, access types, reset values, offsets, and descriptions.
